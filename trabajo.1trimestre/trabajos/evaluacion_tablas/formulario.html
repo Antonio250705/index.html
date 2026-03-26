@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de un formulario">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Formulario</title>
+
+    <style>
+        body {width: 1000px; margin: auto;
+        }
+        .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Evaluación de Formularios en HTML</h1>
+    <p> Completa este formulario de ejemplo para practicar los distintos tipos de campo y validaciones básicas de HTML 5.</p>
+    <form name="formulario" action="evaluacion.php" method="post">
+
+        <label for="nombre">Nombre completo* </label>
+        <input type="text" name="nombre" required placeholder="Introduce tu nombre">
+
+        <br>
+
+        <label for="correo"> Correo electrónico* </label>
+        <input type="email" name="correo" required placeholder="nombre@ejemplo.com">
+
+        <br>
+
+        <label for="contraseña"> Contraseña*</label>
+        <input type="password" name="contraseña" required placeholder="Introduce tu contraseña">
+
+        <br>
+
+        <label for = "Observaciones"> Observaciones </label>
+        <input type="text" id="username" na  required placeholder= "Escribe aqui tus Observaciones..."><br> <br> <br>
+
+        <br>
+
+        <label for = "provincia"> Provincia (Andalucía) </label>
+        <select name = " provincia" id="provincia">
+            <option value="opcion">Seleccione una provincia </option>
+            <option> Málaga</option>
+            <option> Córdoba</option>
+            <option> Sevilla</option>
+            <option> Jaen </option>
+            <option> Granada</option>
+            <option> Cádiz</option>
+            <optin> Huelva</optin>
+        </select>
+
+        <br>
+
+        <label for="Sexo">Sexo </label>
+        <input type="radio" id="sexo1" name="Hombre" value="Hombre"> Hombre
+        <input type="radio" id="sexo2" name="Mujer" value="Mujer"> Mujer
+        <input type="radio" id="sexo3" name="Prefiero no decirlo" value="prefiero no decirlo"> Prefiero no decirlo
+        
+        <br>
+
+        <label for="number">Cantidad (entre 2 y 6)</label>
+        <input type="number" id="number" name="nuber" min="2" max="6"
+        step="1" value="6">
+
+        <br>
+
+        <input type="checkbox" id="checkbox" name="checkbox" value="valor">
+        <label for="checkbox"> Acepto condiciones de uso</label>
+
+        <br> 
+
+        <input type="submit" value="Enviar formulario">
+
+        <br>
+
+        <p> Nota: todos los campos marcados con * son obligatorios</p>
+    </form>
+
+    <h1>Evaluacion de Tablas HTML</h1>
+    <style>
+        body {width:1000px ; margin: auto;}
+        table, th, td {border: 1px solid black; border-collapse:collapse;}
+        th {background:#f1f5f9}
+    </style>
+    <table>
+         <caption>Titulo de Tabla: Resultados de un experimento </caption>
+        <tr>
+            <th colspan="5"> Encabezado principal</th>
+        </tr>
+
+        <tr>
+            <th> <b> Ítem</b></th>
+            <th> <b> Medida</b></th>
+            <th> <b> Formula | Nota</b></th>
+            <th> <b> Observaciones</b> </th>
+        </tr>
+
+        <tr>
+            <td rowspan="2"> <b> Muestra A</b>
+            <br> <small>(ID:A1) </small></br> </td>
+            <td> 12.3</td>
+            <td> H <sub>2</sub>O (agua)</td>
+            <td> Temperatura estable</td>
+        </tr>
+
+        <tr>
+            <td> 11.8</td>
+            <td> NaCl (sal) <i> concentración baja</i></td>
+            <td> Ligera variación</td>
+        </tr>
+
+        <tr>
+            <td> <b> Muestra B</b></td>
+            <td colspan="2"> Promedio combinado : 9.7</td>
+            <td> Repetir medición</td>
+        </tr>
+
+        <tr>
+            <td rowspan="2"> <b> Muestra C</b></td>
+            <td rowspan="2" colspan="2"> Resultado complejo:<br> Valor = 5 <sup>.</sup>10 <sup>3</sup></td>
+            <td> Observación 1</td>
+        </tr>
+
+        <tr>
+            <td> Observación 2 : cambio gradual</td>
+        </tr>
+
+        <tr>
+            <td colspan="2"> <b> Muestra D</b> </td>
+            <td> <mark> Sin medida</mark></td>
+            <td> E = m c <sup>2</sup></td>
+        </tr>
+
+        <tr>
+            <td> Control</td>
+            <td> 0.0</td>
+            <td> pH &gt; 7</td>
+            <td rowspan="2" colspan="2"> Comparación con control</td>
+        </tr>
+
+        <tr>
+            <td> Blank</td>
+            <td> 0.1</td>
+            <td> pH &lt; 7 </td>
+        </tr>
+
+        <tr>
+            <td colspan="4" > Nota: los datos son inventados y sirven únicamente para practicar estructuras de tablas en HTML </td>
+
+        </tr>
+    </table>
+<h2 class="final"><a href="../../index2.html">Volver a la página principal</a></h2>
+    
+</body>
+</html>
