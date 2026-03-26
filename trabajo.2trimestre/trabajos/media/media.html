@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover; 
+            text-align: center;
+            color: white;
+            transition: background 0.3s ease;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+        .container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-image {
+            width: 300px;
+            height: 200px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        footer {
+            background-color: transparent;
+            padding: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .texto-pantalla {
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 0px 20px;
+            border-radius: 5px; 
+            display: inline-block; 
+            position: fixed;
+}
+
+/* Pantalla pequeña como para un movil */
+        @media screen and (max-width: 600px) {
+            body { background-image: url(./img/big-explosion-with-smoke-and-fire-on-black-background-ai-generated-artwork-photo.webp); }
+            .card-image { background-image: url(./img/image.png); }
+            .texto-pantalla::after { content: "Pantalla pequeña"; }
+        }
+
+        /* Pantalla mediana*/
+        @media screen and (min-width: 601px) and (max-width: 1200px) {
+            body { background-image: url(./img/2025-11-01-13-29-37-576x461.webp); }
+            .card-image { background-image: url(./img/3e307b4ded2a4444d8dae41790e2c0f5.jpg); }
+            .texto-pantalla::after { content: "Pantalla mediana"; }
+        }
+
+        /* Pantalla grande como el ordenador */
+        @media screen and (min-width: 1201px) {
+            body { background-image: url(./img/premium_photo-1671229456411-659ff6049231.webp); }
+            .card-image { background-image: url(./img/1200_900.jpeg); }
+            .texto-pantalla::after { content: "Pantalla grande"; }
+        }
+        .boton-volver-contenedor {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+        }
+        .boton-volver {
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Ejemplo de media queries
+    </header>
+
+    <div class="container">
+        <div class="card-image"></div>
+    </div>
+
+    <div class="boton-volver-contenedor">
+        <a href="../../index.html" class="boton-volver">Volver al index</a>
+    </div>
+
+    <footer>
+        <span class="texto-pantalla"></span>
+    </footer>
+
+</body>
+</html>

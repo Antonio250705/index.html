@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Formularios</title>
+
+    <style>
+     body {width: 1000px; margin: auto;
+    }
+     .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+    </style>
+    </head>
+
+<body>
+    <h1>Formulario de contacto</h1>
+     <form name="formulario" action="evaluacion.php" method="post">
+
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" >
+        <br>
+        <br>
+        
+        <label for="correo">Email: </label>
+        <input type="email" name="correo" >
+        <br>
+        <br>
+
+        <label for="Asunto">Asunto: </label>
+        <input type="text" name="Asunto" >
+        <br>
+        <br>
+
+        <label for = "Comentarios">Comentarios: </label><br>
+        <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea>
+        <br> 
+
+        <input type="submit" value="Enviar ">
+
+<br>
+<br>
+    <h1>Formulario de registro al curso</h1>
+
+
+        <label for="nombre">Nombre completo: (requerido)</label><br>
+        <input type="text" name="nombre">
+        <br>
+        <br>
+
+
+        <label for="correo"> Correo electrónico: (requerido)</label><br>
+        <input type="email" name="correo">
+        <br>
+        <br>
+
+        <label for="Edad"> Edad </label><br>
+        <input type="number" name="Edad">
+        <br>
+        <br>
+
+        <label for = "curso de interés"> Curso de interés </label><br>
+        <select name = " curso de interés" id="curso de interés">
+            <option value="opcion">Informática básica </option>
+            <option> Informática básica</option>
+            <option> Cocina</option>
+            <option> Mecánica</option>
+            <option> Jardinería </option>
+        </select>
+        <br>
+        <br>
+
+        <label>Turno preferido:</label><br>
+            <input type="radio" id="mañana" name="turno" value="m">
+            <label for="manana">Mañana</label><br>
+
+            <input type="radio" id="tarde" name="turno" value="t">
+            <label for="tarde">Tarde</label>
+        <br>
+        <br>
+
+        <input type="checkbox" id="condiciones" name="condiciones">
+        <label for="condiciones">Acepto las condiciones del curso</label><br>
+        <br>
+        <br>
+
+        <label for = "Comentarios">Comentarios adicionales: </label><br>
+        <textarea id="comentarios" name="comentarios"  required placeholder="Escribe aquí tus dudas o preferencias..." rows="5" cols="40"></textarea>
+        <br>
+        <br>
+
+        <input type="submit" value="Enviar registro ">
+
+<br>
+<br>
+    <h1>Formulario de pedido</h1>
+
+
+    <label for="nombre">Nombre del cliente:</label><br>
+    <input type="text" name="nombre">
+    <br>
+    <br>
+
+    <label for="correo"> Correo electrónico:</label><br>
+    <input type="email" name="correo">
+    <br>
+    <br>
+
+    <label for="Fecha deseada de entrega"> Fecha deseada de entrega </label><br>
+    <input type="number" name="Fecha deseada de entrega"  required placeholder="dd/mm/aaaa">
+    <br>
+    <br>
+
+    <label for="color">Color del producto:</label><br>
+    <input type="color" name="color del producto" value="#000000">
+    <br>
+    <br>
+
+    <label for="cantidad">Cantidad (1 a 10):</label><br>
+    <input type="range" name="cantidad" min="1" max="10" value="7">
+    <br>
+    <br>
+
+    <label for="accesorios">Accesorios adicionales:</label><br>
+    <select name="accesorios" size="4" multiple>
+            <option value="funda protectora">Funda protectora</option>
+            <option value="bateria adicional">Batería adicional</option>
+            <option value="soporte de mesa">Soporte de mesa</option>
+            <option value="kit de limpieza">Kit de limpieza</option>
+    <br>
+    <br>
+    <br>
+    <input type="checkbox" id="condiciones" name="condiciones">
+    <label for="condiciones">Acepto los términos del pedido</label><br>
+    <br>
+    <br>
+    
+    <label for = "Comentarios">Comentarios o instrucciones especiales: </label><br>
+    <textarea id="comentarios" name="comentarios"  required placeholder="Indica detalles especiales sobre tu pedido..." rows="5" cols="40"></textarea>
+    <br>
+    <br>
+
+    <input type="submit" value="Enviar pedido ">
+
+    <h2 class="final"><a href="../../index2.html">Volver a la página principal</a></h2>
+</body>
+</html>

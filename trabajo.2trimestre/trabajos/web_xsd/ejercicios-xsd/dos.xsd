@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="agenda">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="contacto" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" type="xs:string"/>
+              <xs:element name="apellidos" type="xs:string"/>
+              <xs:element name="telefonos">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="fijo" type="xs:string" minOccurs="0"/>
+                    <xs:element name="movil" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="direccion">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="calle" type="xs:string"/>
+                    <xs:element name="ciudad" type="xs:string"/>
+                    <xs:element name="cp" type="xs:integer"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+            <xs:attribute name="categoria" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="profesional"/>
+                  <xs:enumeration value="personal"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

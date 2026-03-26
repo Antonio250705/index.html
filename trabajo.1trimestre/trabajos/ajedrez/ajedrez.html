@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Tablero de ajedrez</title>
+<style>
+    
+  h1{
+    text-align: center; /* centrado de los textos */
+  }
+  table {
+    border-collapse: collapse;
+    width: 400px; /* o el tamaño que quieras del tablero */
+    height: 400px; 
+    margin: auto; /* asi queda centrado */
+  }
+  
+  table td {
+   width: 12.5%;  /* 100% / 8 columnas */
+   height: 12.5%; /* 100% / 8 filas  */
+   background-color: #A0522D; /*En principio todas las celdas son blancas*/
+  }
+
+  /*En la primera tabla los elementos <td> que son hijos de los elementos <tr> pares tienen el fondo oscuro */
+  table.horizontal tr:nth-child(even) td
+  {
+    background: #5D4037;
+  }
+
+/*En la segunda tabla los elementos <td> pares que son hijos de los elementos <tr> tienen el fondo oscuro */
+  table.vertical td:nth-child(odd) 
+  {
+    background: #5D4037;
+  }
+
+  /*Combinando adecuadamente estas dos ideas sale el tablero*/
+  table.tablero tr:nth-child(odd) td:nth-child(even), table.tablero tr:nth-child(even) td:nth-child(odd){
+    background:#5D4037;
+
+  }
+  .final{
+        background-color: aquamarine;
+        color: black;
+        width:fit-content;
+        width:33vw;
+        padding: 5px 10px;
+  }
+
+</style>
+</head>
+<body>
+ <main>
+    
+    <h1>Tablero de ajedrez </h1>
+    <table class="tablero">
+    <tr><td><img src="./imagenes/torre-negra.png"></td><td><img src="./imagenes/caballo-negro.png"></td><td><img src="./imagenes/alfil-negro.png"></td><td><img src="./imagenes/reina-negra.png"></td><td><img src="./imagenes/rey-negra.png"></td><td><img src="./imagenes/alfil-negro.png"></td><td><img src="./imagenes/caballo-negro.png"></td><td><img src="./imagenes/torre-negra.png"></td></tr>
+    <tr><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td><td><img src="./imagenes/peon-negro.png"></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td><td><img src="./imagenes/peon-blanco.png"></td></tr>
+    <tr><td><img src="./imagenes/torre-blanca.png"></td><td><img src="./imagenes/caballo-blanco.png"></td><td><img src="./imagenes/alfil-blanco.png"></td><td><img src="./imagenes/reina-blanca.png"></td><td><img src="./imagenes/rey-blanco.png"></td><td><img src="./imagenes/alfil-blanco.png"></td><td><img src="./imagenes/caballo-blanco.png"></td><td><img src="./imagenes/torre-blanca.png"></td></tr>
+  </table>
+
+<h2 class="final"><a href="../../index2.html">Volver a la página principal</a></h2>
+</main>
+</body>
+</html>

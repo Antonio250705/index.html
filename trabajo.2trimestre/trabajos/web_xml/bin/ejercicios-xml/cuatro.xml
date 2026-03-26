@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dni_espanyol [
+  <!ELEMENT dni_espanyol (identificacion, titular, domicilio, validez)>
+  <!ELEMENT identificacion (numero, num_soporte)>
+  <!ELEMENT numero (#PCDATA)>
+  <!ELEMENT num_soporte (#PCDATA)>
+  <!ELEMENT titular (nombre, primer_apellido, segundo_apellido, sexo, nacionalidad, fecha_nacimiento)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT primer_apellido (#PCDATA)>
+  <!ELEMENT segundo_apellido (#PCDATA)>
+  <!ELEMENT sexo (#PCDATA)>
+  <!ELEMENT nacionalidad (#PCDATA)>
+  <!ELEMENT fecha_nacimiento (#PCDATA)>
+  <!ELEMENT domicilio (direccion, localidad, provincia)>
+  <!ELEMENT direccion (#PCDATA)>
+  <!ELEMENT localidad (#PCDATA)>
+  <!ELEMENT provincia (#PCDATA)>
+  <!ELEMENT validez (fecha_expedicion, fecha_caducidad)>
+  <!ELEMENT fecha_expedicion (#PCDATA)>
+  <!ELEMENT fecha_caducidad (#PCDATA)>
+]>
+
+<dni_espanyol>
+    <identificacion>
+        <numero>12345678A</numero>
+        <num_soporte>AAA000000</num_soporte>
+    </identificacion>
+
+    <titular>
+        <nombre>Antonio Javier</nombre>
+        <primer_apellido>García</primer_apellido>
+        <segundo_apellido>Corro</segundo_apellido>
+        <sexo>M</sexo>
+        <nacionalidad>ESPAÑOLA</nacionalidad>
+        <fecha_nacimiento>20/05/2000</fecha_nacimiento>
+    </titular>
+
+    <domicilio>
+        <direccion>Calle Mayor, 15 3ºB</direccion>
+        <localidad>Córdoba</localidad>
+        <provincia>Córdoba</provincia>
+    </domicilio>
+
+    <validez>
+        <fecha_expedicion>15/01/2024</fecha_expedicion>
+        <fecha_caducidad>15/01/2034</fecha_caducidad>
+    </validez>
+</dni_espanyol>

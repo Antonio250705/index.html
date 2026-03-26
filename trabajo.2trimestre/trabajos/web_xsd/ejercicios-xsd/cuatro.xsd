@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="dni">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="numero">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="[0-9]{8}[A-Z]"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        
+        <xs:element name="soporte" type="xs:string"/>
+        <xs:element name="primer_apellido" type="xs:string"/>
+        <xs:element name="segundo_apellido" type="xs:string"/>
+        <xs:element name="nombre" type="xs:string"/>
+        
+        <xs:element name="sexo">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="M"/> <xs:enumeration value="F"/> </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+
+        <xs:element name="nacionalidad" type="xs:string"/>
+        <xs:element name="fecha_nacimiento" type="xs:date"/>
+        <xs:element name="validez" type="xs:date"/>
+
+        <xs:element name="direccion">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="domicilio" type="xs:string"/>
+              <xs:element name="lugar" type="xs:string"/>
+              <xs:element name="provincia" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio García Corro">
+    <title>Box Sizing</title>
+<style>
+    html{
+        height: 100%;
+    }
+    header{
+        text-align: center;
+        background-color: darkcyan;
+        box-shadow: 0 0 10px 1px;
+        border-radius: 15px;
+        padding: 1%;
+        background-size: auto;
+        margin: 10px;
+    }
+    h1{
+        color:black;
+        background-color:whitesmoke;
+        border-radius: 10px;
+        text-align: center;
+    }
+    nav{
+        background-color: aquamarine;
+        border-radius: 15px;
+        margin: 10px;
+        display: inline-block;
+    }
+    main{
+        background-color: antiquewhite;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px 1px;
+        margin: 10px;
+    }
+    .caja{
+        background-color: salmon;
+        border: 20px solid rgb(216,117 ,106);
+        list-style: none;
+        display: inline-block;
+        margin:30px;
+    }
+    ul{
+        text-align: justify;
+    }
+
+    p{
+        font-size:large;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+</style>
+</head>
+ 
+<body>
+    <header>
+    <h1>Box-sizing</h1>
+    <nav>Controla cómo se determinan sus dimensiones totales , incluyendo el ancho y la altura.</nav>
+</header>
+<main>
+    <section>
+        <ul>
+            <li>with 500px</li>
+            <li>height 100px</li>
+            <li>padding 10px</li>
+            <li>border 20px</li>
+        </ul>
+    </section>
+    <section>
+        <ul class="caja">
+            <li class="caja"><b>box-sizing:border-box</b></li>
+            <li class="caja"><b>box-sizing:content-box</b></li>
+        </ul>
+    </section>
+</main>
+
+<h2 class="final"><a href="../index_tema8.html">Volver</a></h2>
+    </body>
+</html>

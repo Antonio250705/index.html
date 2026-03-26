@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Box Model</title>
+    <style>
+    html{
+        height: 100%;
+    }
+
+    #cabecera {
+        background-color:darkcyan;
+        color:white;
+        text-align: center;
+        padding: 20px;
+      }
+
+    h1{
+        color:black;
+        background-color: darkcyan;
+        border-radius: 10px;
+        text-align: center;
+
+    }
+    .caja{
+        width: 300px;
+        height: 250px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .caja1{
+        background-color: antiquewhite;
+        border-color: black;
+        border-style: dotted;
+        border-width: 5px;
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
+    .caja2{
+        background-color: yellow;
+        border: 5px solid black;
+        border-radius: 0px 30px 30px 0px;
+        border-left-width: 50px;
+    }
+
+    .caja3{
+        background-color: salmon;
+        border: 20px solid rgb(216,117 ,106);
+        border-style: groove;
+        padding-top: 0px;
+        justify-content:right top;
+        text-align: right ;
+    }
+    ul{
+        text-align: justify;
+    }
+
+    p{
+        font-size:large;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+
+</style>
+</head>
+
+<body>
+    <h1>Modelo de caja (Box Model)</h1>
+    <br>
+     <div id="cabecera">
+        <p>Es un concepto fundamental en el desarrollo web que describe cómo se estructuran los elementos en una página web y cómo se calculan sus dimensiones.
+            <br>
+        <ul>
+            <li> Contenido: Es el área real que contiene el texto, imágenes u otros elementos.
+            <li>Relleno (Padding): Espacio transparente alrededor del contenido. No tiene un color de fondo propio. Le afecta el color de fondo del elemento
+            <li>Borde (Border): Es un borde alrededor del relleno. El borde puede tener un color propio o verse afectado por el color de fondo del elemento.    El borde tiene varias propiedades 
+            <li>Margen (Margin): Espacio transparente fuera del borde. No tiene un color de fondo propio, ni le afecta el color de fondo del elemento. Se utiliza para crear espacio entre elementos.</li>
+        </ul>
+        </p>
+    <br>
+      </div>
+    <br>
+
+    <table>
+        <tr>
+            <td>
+                <div class="caja caja1">
+                    <!-- he utilizado un tipo de borde diferente, apareciendo de forma discontinua -->
+                <p> <b>En esta caja hemos utlizado: </b> <br>
+            <br>background-color: antiquewhite;
+            <br>border-color: black;
+            <br> border-style: dotted;
+            <br> border-width: 5px;
+            <br> padding-top: 10%;
+            <br> padding-left: 10%; </p>
+                </div>
+            </td>
+
+            <td>
+                <div class="caja caja2">
+                    <!-- hemos agrandado el borde izquierdo, dandole un grosor mayor que el derecho -->
+                <p> <b>En esta caja hemos utilizado:</b> <br>
+            <br>background-color: yellow;
+            <br>border: 5px solid black;
+            <br>border-radius: 0px 30px 30px 0px;
+            <br>border-left-width: 50px;</p>
+                </div>
+            </td>
+
+            <td>
+                <div class="caja caja3">
+                    <!-- el padding lo hemos utilizado para que salga el texto en la zona izquierda -->
+                <p> <b> En esta caja hemos utilizado: </b> <br>
+            <br>background-color: salmon;
+            <br>border: 20px solid rgb(216,117 ,106);
+            <br>border-style: groove;
+            <br>padding-top: 0px;      
+            <br>justify-content:right top;
+            <br>text-align: right ;</p>
+                </div>
+            </td>
+        </tr>
+        
+    </table>
+<h2 class="final"><a href="../index_tema8.html">Volver</a></h2>
+</body>
+</html>

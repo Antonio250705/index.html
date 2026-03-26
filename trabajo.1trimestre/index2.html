@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Presentación de mis trabajos</title>
+
+<style>
+    :root{
+      --base : #303446;
+      --texto: #c6d0f5;
+      --granate: #ea999c;
+      --azul-cielo: #79e0ee;
+      --base-floja:#414559;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      margin :0;
+      font-family: Arial, sans-serif;
+      background: var(--base);
+      color: var(--granate);
+      line-height: 1.6;
+      background-image: url(./imagenes/fondo.png);
+      background-attachment: fixed;
+    }
+    #contenedor {
+      width: 90%;
+      margin: 0 auto;
+      padding: 40px 0;
+      max-width: 1200px;
+      
+    }
+    #cabecera {
+      background: var(--granate);
+      color:var(--base);
+      text-align: center;
+      padding: 30px 20px;
+      border-style:double;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      margin-bottom: 20px;
+      font-size: 15px;
+     
+    }
+    #cabezera h1{
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+    .subtitulo{
+      font-size: 15px;
+      justify-content: center;
+      text-align: center;
+    }  
+    nav ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background: var(--base-floja);
+      text-align: center;
+      border-style: dashed;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border: 2px solid var(--granate);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav ul li{
+      display: inline-block;
+      margin: 5px;
+    }
+    nav ul li a{
+      display: inline-block;
+      padding: 5px 10px;
+      background: var(--base);
+      color: var(--granate);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3 ease;
+    }
+    nav ul li a:hover {
+      background: var(--granate);
+      color: var(--base);
+    }
+    .contenido-bloque{
+      background-color: var(--base-floja);
+      border-radius: 15px;
+      margin: 30px;
+      padding: 30px;
+      border: 3px solid var(--base-floja);
+      transition: transform 0.3s ease;
+    }
+    .contenido-bloque:hover{
+      transform: translateY(-3px);
+    }
+    .titulo{
+      background-color: var(--granate);
+      color: var(--base);
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      padding: 10px 15px;
+    }
+    .practica{
+      color: var(--granate);
+      font-style: normal;
+      display: block;
+      padding: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    p{
+      background-color: transparent;
+      color: var(--texto);
+      text-align: justify;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .introduccion{
+      text-align: center;
+      padding: 50px;
+    }
+    .boton{
+      background-color: var(--azul-cielo);
+      color: var(--base);
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 18px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .boton:hover{
+      background: #61d5e5;
+      transform: translateY(-2px);
+    }
+    .link-trabajos,
+    .link-ayuda{
+      color: var(--azul-cielo);
+      font-size: 18px;
+      padding: 5px;
+      display: inline-block;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .link-trabajos:hover,
+    .link-ayuda:hover{
+      color: var(--granate);
+      text-decoration: underline;
+    }
+    .imagen-contenedor{
+      text-align: center;
+      margin: 20px;
+    }
+    .imagen-texto{
+      color: var(--texto);
+      font-size: 15px;
+      opacity: 0.8;
+    }
+    .pagina-contenido img {
+      display: block;
+      width: 80%;
+      height: auto;
+      border-radius: 10px;
+      margin: 0 auto 10px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    footer{
+      background-color: var(--base-floja);
+      color: var(--texto);
+      text-align: center;
+      padding: 50px;
+      border-radius: 15px;
+      font-size: 18px;
+      margin-top: 40px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    }
+    footer p{
+      color: rgb(156, 144, 144);
+      margin: 5px;
+      justify-content: center;
+      text-align: center;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+        }
+
+</style>
+</head>
+
+<body>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#Tema2">Tema 2</a></li>
+        <li><a href="#Tema3">Tema 3</a></li>
+        <li><a href="#Tema4">Tema 4</a></li>
+        <li><a href="#Tema5">Tema 5</a></li>
+        <li><a href="#Tema6">Tema 6</a></li>
+        <li><a href="#Tema8">Tema 8</a></li>
+      </ul>
+    </nav>
+
+    <div id="contenedor">
+
+    <header id="cabecera">
+      <h1>Trabajo 1º Trimeste</h1>
+      <p class="subtitulo">agc0147</p>
+    </header>
+
+    <div id="inicio" class="contenido-bloque introduccion" > 
+      <h2>Bienvenido a mi trabajo realizado durante el primer trimestre, de la asignatura de Lenguajes de Marcas</h2>
+      <p>Mi nombre es Antonio Javier García Corro, en esta página se puede acceder a todo lo relazionado con el trimestre. Esta organizado por temas. En cada tema podemos encontrar sus correspondientes tareas y prácticas realizadas en clase e incluso algunos ejemplos de examen. 
+      <br> Dentro de cada tema, también podemos encontrar enlaces a páginas de ayuda! </p>
+      <a href="#Tema2" class="boton">Empezar a explorar!</a>
+      <br>
+      <br>
+      <p>Antes de empezar, no podiamos dejar atrás a <strong>Medy</strong>, nos ha estado acompañando todo el trimestre.</p>
+      <div class="imagen-contenedor"></div>
+      <img src="./imagenes/medy.png"> 
+    </div>
+
+
+    <div id="Tema2" class="contenido-bloque">
+      <h2 class="titulo">Tema  2.</h2>
+      <article class="practica">
+      <h3 class=>Práctica1. <b>MiniWeb</b></h3>
+      <div class="pagina-contenido">
+        <p>En el Tema 2, empezamos a introducirnos en el mundo del HTML, conociendo los aspectos más importantes:
+          <ul>
+            <li>Conocer la sintaxis de HTML</li>
+            <li>Identificar elementos del documento HTML</li>
+            <li>Estructura de un sitio Web</li>
+          </ul></p>
+      <a href="./trabajos/miniweb/" class="link-trabajos"> Mini Web</a>
+      <br>
+      <a href="https://www.w3schools.com/tags/tag_a.asp" class="link-ayuda"> Explicación completa de los elementos de sintaxis</a> <small>Página de ayuda</small>
+      </div>
+      </article>
+    </div>
+
+    <div id="Tema3" class="contenido-bloque">
+      <h2 class="titulo">Tema 3</h2>
+      <article class="practica">
+      <h3>Práctica 2. <b> El Sistema Solar</b></h3>
+      <div class="pagina-contenido">
+        <p>En el Tema 3, nos adentramos en la estructura del documento, comprendiendo todas las partes de su estructura y elementos fundamentales. También empezamos a utilizar etiquetas sencillas .</p>
+        <a href="./trabajos/sistema_solar/" class="link-trabajos"> Sistema Solar</a>
+        <br>
+        <div class="imagen-contenedor"></div>
+        <img src="./imagenes/tema3.png" alt="Normas para nuestro HTML">
+        <p class="imagen-texto">Podemos ver las normas que se deben cumplir en todos nuestros documentos HTML.</p> 
+      </div>
+      </article>
+    </div>
+
+
+    <div id="Tema4" class="contenido-bloque">
+      <h2 class="titulo">Tema 4</h2>
+      <article class="practica">
+      <h3>Práctica 3. <b> Ejemplos prácticos de etiquetas</b></h3>
+      <div class="pagina-contenido">
+        <p>El tema 4 para mi opinión, es muy importante. Aprendemos a conocer más a fondo las equitetas HTML.</p>
+        <p>En los enlaces podemos ver diferentes tipos de tablas, modificar imágenes, diferentes etiquetas y distintos tipos de enlace. </p>
+        <a href="./trabajos/tema4/ejemplo_lista_no_numerada.html" class="link-trabajos"> Ejemplo de una lista no numerada </a> ------ <a href="./trabajos/tema4/ejemplo_lista_descriptiva.html"  class="link-trabajos"> Ejemplo de una lista descriptiva</a>------<a href="./trabajos/tema4/ejemplo_lista_numerada.html"  class="link-trabajos"> Ejemplo de una lista numerada</a>
+        <br>
+        <a href="./trabajos/tema4/ejemplo_etiquetas_de_texto.html"  class="link-trabajos">Ejemplo de etiquetas de texto</a>------<a href="./trabajos/tema4/ejemplo_img.html"  class="link-trabajos">Ejemplo de tamaños de imágenes</a>------<a href="./trabajos/tema4/ejemplo_link.html"  class="link-trabajos">Ejemplo de diferentes tipos de enlace </a>
+        <br>
+        <a href="./trabajos/tema4/ejemplo_iframe.html" class="link-trabajos">Ejemplos de iframe</a>
+      </div>
+      </article>
+    </div>
+
+
+    <div id="Tema5" class="contenido-bloque">
+      <h2 class="titulo">Tema 5</h2>
+      <article class="practica">
+      <h3>Práctica 4. <b> Ejemplos de tablas</b></h3>
+      <h3>Práctica 5. <b> Ejemplos de formularios</b></h3>
+      <div class="pagina-contenido">
+        <p>En este tema  seguimos adentrándonos en los estilos CSS, las estructuras de tablas para hacer diferentes tipos y los formularios, conociendo sus métodos y etiquetas.</p>
+        <a href="./trabajos/ejemplos_tablas/tabla1.html"  class="link-trabajos"> Diferentes tipos de tablas </a>------<a href="./trabajos/tabla_horario_clase/horario.html"  class="link-trabajos">Horario de clase</a>------<a href="./trabajos/calculadora/calculadora.html"  class="link-trabajos">Cálculadora</a>
+        <br>
+        <a href="./trabajos/ejemplo_formularios/formulario1.html"  class="link-trabajos"> Diferentes tipos de formularios </a>
+        <br>
+        <a href="./trabajos/evaluacion_tablas/formulario.html"  class="link-trabajos"> Examen de evaluación tablas y formularios</a> <small>Prueba práctica de clase!</small>
+      </div>
+      </article>
+    </div>
+
+    <div id="Tema6" class="contenido-bloque">
+      <h2 class="titulo">Tema 6</h2>
+      <article class="practica">
+      <h3>Práctica 6. <b> Web Semántica</b></h3>
+      <div class="pagina-contenido">
+        <p>Conocemos la Web Semántica, estudiando las etiquetas semánticas, para estructurala en orden correcto (cabecera, imágenes, pie de fondo...). Por otra parte vemos de forma leve el modelo de caja <small>Siguiente tema!!</small></p>
+        <a href="./trabajos/Web_semantica/index.html"  class="link-trabajos"> Mi Web Semántica</a>
+        <br>
+        <a href="https://catppuccin.com/palette/" class="link-ayuda"> Aquí podemos encontrar una gran paleta de colores </a> <small>Página de ayuda!</small>
+        <br>
+      </div>
+      </article>
+    </div>
+
+    <div id="Tema8" class="contenido-bloque">
+      <h2 class="titulo">Tema 8</h2>
+      <article class="practica">
+      <h3>Práctica 7. <b>Crear distintos tipos de caja</b></h3>
+      <h3>Práctica 8. <b>Páginas HTML explicativas</b></h3>
+      <h3>Práctica 9. <b>Tablero de ajedrez</b></h3>
+      <h3>Práctica 10. <b>Fuentes con CSS</b></h3>
+      <h3>Práctica 11. <b>Menú con iconos</b></h3>
+      <div class="pagina-contenido">
+        <p>Al ser el último tema ya conocemos a fondo la mayoría de los aspectos de HTML que hemos ido viendo poco a poco a lo largo del trimestre; los estilos, estructuras, formatos, diseños...</p>
+        <p>En este tema, aprendemos a realizar tipos de cajas, conociendo sus estilos</p> 
+        <a href="./trabajos/tarea1_tema8/cajas.html"  class="link-trabajos">Diferentes tipos de cajas</a>------<a href="./trabajos/tarea1_tema8/cajas2.html"  class="link-trabajos">Complicación de modelos</a>
+        <br>
+        <a href="./trabajos/fuente_css/fuentes.html" class="link-trabajos">Fuentes de CCS</a>------
+        <a href="https://fonts.google.com/" class="link-ayuda"> Diferentes fuentes de letra </a> <small>Página de ayuda!</small>
+        <br>
+        <a href="./trabajos/tarea2_tema8/index_tema8.html"  class="link-trabajos">Varias páginas HTML independientes que explican y demuestran conceptos del tema</a>
+        <br>
+        <a href="./trabajos/ajedrez/ajedrez.html"  class="link-trabajos">Tablero de ajedrez</a>
+        <br>
+        <a href="./trabajos/iconos/iconos.html"  class="link-trabajos">Recreación de un menú con iconos</a>
+      </div>
+      </article>
+    </div>
+<br>
+<footer>
+  <a href="https://lenguajecss.com/" class="link-ayuda"> Para aprender CSS</a>
+  <p>Antonio Javier García Corro - agc0147</p>
+  <p>Davante Medac 2025</p>
+  
+  <h2 class="final"><a href="../index.html">Volver a la página principal</a></h2>
+</footer>
+</body>
+</html>

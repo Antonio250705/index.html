@@ -1,0 +1,11 @@
+{
+  "alumno": "Antonio Javier García Corro",
+  "modulo": "Lenguajes de Marcas",
+  "tema": 12,
+  "ejercicios_completados": [
+    "Factura XML",
+    "Validación XSD",
+    "Resumen XPath"
+  ],
+  "nota_esperada": 10
+}

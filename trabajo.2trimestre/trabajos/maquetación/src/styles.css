@@ -1,0 +1,121 @@
+
+
+/*lo hacemos en otra pag xq es requisito de la tarea */
+
+body{
+    background-color:rgb(116, 147, 153) ;
+    padding: 20px;
+    margin: 0;
+}
+
+.contenedor{
+    display: flex;
+    gap: 30px;
+    margin: 15px 0;
+    align-items: stretch; /*misma altura */
+}
+
+header, footer{
+    background-color: antiquewhite;
+    border: 5px solid ;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav{
+    background-color:rgb(95, 124, 129);
+    border: 2px solid;
+    padding: 20px;
+    width: 20%;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+
+}
+
+nav li{
+    background-color: rgb(57, 76, 80);
+    color: aliceblue;
+    text-align: center;
+    border: 2px solid #000;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+main{
+    background-color:rgb(95, 124, 129);
+    border: 2px solid;
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.titulo-noticia{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+
+}
+.noticia{
+    background-color: rgb(57, 76, 80);
+    color: aliceblue;
+    text-align: center;
+    border: 2px solid #000;
+    width: 50%;
+    min-height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+aside{
+    background-color:rgb(95, 124, 129);
+    border: 2px solid;
+    width: 20%;
+    padding: 10px;
+}
+
+.deporte {
+    background-color: rgb(57, 76, 80);
+    color: aliceblue;
+    border: 2px solid #000;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2{
+    color: rgb(78, 172, 209);
+}
+
+.boton-volver-contenedor {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+}
+.boton-volver {
+    text-decoration: none;
+    background-color: #1e293b;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+}

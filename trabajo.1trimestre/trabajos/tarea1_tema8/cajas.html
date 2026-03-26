@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Cajas</title>
+</head>
+
+<style>
+    table,body{
+        height: 30%;
+        width: 70%;
+    }
+
+    html{
+        height: 100%;
+    }
+
+    tr{
+        width:100% ;
+        height: 33%;
+    }
+
+    td{
+        width: 33%;
+        height: 100%;
+    }
+
+    div{
+        height: 100%;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .caja{
+        width: 300px;
+        height: 250px;
+        margin: auto;
+        box-sizing: border-box;
+    }
+
+    .caja1{
+        background-color: antiquewhite;
+        border-color: black;
+        border-style: dotted;
+        border-width: 5px;
+        padding-top: 10%;
+        padding-left: 10%;
+    }
+
+    .caja2{
+        background-color: yellow;
+        border: 5px solid black;
+        border-radius: 0px 30px 30px 0px;
+        border-left-width: 50px;
+    }
+
+    .caja3{
+        background-color: salmon;
+        border: 20px solid rgb(216,117 ,106);
+        border-style: groove;
+        padding-top: 0px;
+        justify-content:right top;
+        text-align: right ;
+        
+    }
+
+    .caja4{
+        background-color: mediumseagreen;
+        border: 10px solid rgb(3, 59, 3);
+        border-style: inset;
+        border-width: 30px;
+        border-radius: 0px 40px 0px 70px;
+    }
+
+    .caja5{
+        border-radius: 60%;
+        background-color:bisque;
+        border-color: chocolate;
+        border-style:dashed;
+        border-width: 5px;
+        border-radius: 50%;
+        vertical-align: center;
+        text-align: center;
+    }
+
+    .caja5_p{
+        font-size: 800%;
+    }
+
+    .caja6{
+        background-color: skyblue;
+        border: 10px solid rgb(30, 30, 143) ;
+        border-style: inset;
+        border-width: 30px;
+        padding-top: 40px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .caja7{
+        background-color:orangered;
+        background: linear-gradient(orangered, yellow);
+        border-bottom: 30px orangered solid;
+        border: 10px orangered solid;
+        border-bottom-width:30px ;
+        padding-top: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .caja8{
+        background-color: white;
+        border-style:solid;
+        border-width: 30px;
+        border-top-color:yellow ;
+        border-left-color: blue;
+        border-right-color: green;
+        border-bottom-color: red;
+    }
+
+    .caja9{
+        background-color: white;
+        border-style: double;
+        border-radius: 30px 30px 30px 30px;
+        border-width: 20px;
+        border-color: blueviolet;
+        padding-top: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    p{
+        color: blue;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+</style>
+<body>
+    <h1>Ejercico de cajas css </h1>
+
+    <table>
+        <tr>
+            <td>
+                <div class="caja caja1">
+                <p> Estilo de caja</p>
+                </div>
+            </td>
+            <td>
+                <div class="caja caja2">
+                <p>contenido de la caja </p>
+                </div>
+            </td>
+            <td>
+                <div class="caja caja3">
+                <p> contenido de la caja</p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class=" caja caja4">
+                <p> contenido de la caja</p>
+                </div>
+            </td>
+            <td>
+                <div class=" caja caja5 caja5_p ">
+                <p> ? </p>
+                </div>
+            </td>
+            <td>
+                <div class="caja caja6">
+                <p> contenido de la caja</p>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="caja caja7">
+                <p>contenido de la caja </p>
+                </div>
+            </td>
+            <td>
+                <div class="caja caja8">
+                <p> contenido de la caja</p>
+                </div>
+            </td>
+            <td>
+                <div class="caja caja9">
+                <p>contenido de la caja </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+<br>
+<h2 class="final"><a href="../../index2.html">Volver a la página principal</a></h2>
+</body>
+</html>

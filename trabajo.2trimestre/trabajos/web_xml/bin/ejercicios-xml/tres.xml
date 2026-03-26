@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu_restaurante [
+  <!ELEMENT menu_restaurante (categoria+)>
+  <!ELEMENT categoria (item+)>
+  <!ATTLIST categoria nombre CDATA #REQUIRED>
+  <!ELEMENT item (nombre_plato, descripcion, precio)>
+  <!ATTLIST item dieta (normal | vegano | sin-gluten) "normal">
+  <!ELEMENT nombre_plato (#PCDATA)>
+  <!ELEMENT descripcion (#PCDATA)>
+  <!ELEMENT precio (#PCDATA)>
+]>
+
+<menu_restaurante>
+    <categoria nombre="Entrantes">
+        <item dieta="vegano">
+            <nombre_plato>Gazpacho Andaluz</nombre_plato>
+            <descripcion>Sopa fría de tomate, pepino y pimiento con aceite de oliva virgen.</descripcion>
+            <precio>6.50</precio>
+        </item>
+        <item dieta="sin-gluten">
+            <nombre_plato>Ensalada César</nombre_plato>
+            <descripcion>Lechuga romana, pollo a la brasa y salsa especial sin gluten.</descripcion>
+            <precio>9.90</precio>
+        </item>
+    </categoria>
+
+    <categoria nombre="Platos Principales">
+        <item dieta="normal">
+            <nombre_plato>Solomillo al Pedro Ximénez</nombre_plato>
+            <descripcion>Carne de cerdo ibérico con reducción de vino dulce y pasas.</descripcion>
+            <precio>18.00</precio>
+        </item>
+        <item dieta="vegano">
+            <nombre_plato>Hamburguesa de Lentejas</nombre_plato>
+            <descripcion>Hamburguesa artesanal de legumbres con pan integral y aguacate.</descripcion>
+            <precio>12.50</precio>
+        </item>
+    </categoria>
+
+    <categoria nombre="Postres">
+        <item dieta="sin-gluten">
+            <nombre_plato>Flan de Huevo Casero</nombre_plato>
+            <descripcion>Receta tradicional con caramelo líquido artesano.</descripcion>
+            <precio>4.50</precio>
+        </item>
+    </categoria>
+</menu_restaurante>

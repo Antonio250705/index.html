@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Posicionamiento 01</title>
+<style>
+    *{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.azul{
+        background-color: blue;
+        width: 50%;
+        height: 50%;
+        float: left; /*se pega a la izq el cuadro*/
+    }
+
+    div.rojo{
+        background-color: red;
+        width: 50%;
+        height: 50%;
+        float: right; /*se pega a la dercha el cuadro*/
+    }
+
+    div.verde{
+        background-color: rgb(0, 255, 76);
+        width: 50%;
+        height: 50%;
+        clear: both;
+        float: left;
+    }
+
+    div.amarillo{
+        background-color: rgb(238, 255, 0);
+        width: 50%;
+        height: 50%;
+        float: right;
+    }
+
+    .boton-volver {
+        position: fixed;
+        top: 800px;
+        left: 800px;
+        display: inline-flex;      
+        align-items: center;       
+        justify-content: center;
+        height: 40px;              
+        padding: 0 20px;           
+        border-radius: 20px;     
+        background-color: #1e293b;
+        color: white;
+    }
+    .boton-volver a {
+    color: white;
+    text-decoration: none; /*para quitar el subrayado*/
+}
+
+</style>
+</head>
+<body>
+
+    <main>
+        <div class="azul">
+            <h1>Título largo en azul </h1>
+        </div>
+        <div class="rojo">
+            <p>Rojo</p>
+        </div>
+        <div class="verde">
+            <p>Verde</p>
+        </div>
+        <div class="amarillo">
+            <p>Amarillo</p>
+        </div>
+    </main>
+
+ <h2 class="boton-volver"><a href="../posicionamientos.html">Volver a Posicionamientos</a></h2>
+    
+</body>
+</html>

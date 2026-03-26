@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Grid 12 columnas con huecos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .caja {
+      background-color: #a9cdee;
+      padding: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .num {
+      padding: 10px 0;
+      font-size: 14px;
+    }
+    .boton-volver-contenedor {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; 
+        }
+        .boton-volver {
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+        }
+  </style>
+</head>
+
+<body>
+
+<h1>Diseño en 12 columnas</h1>
+
+<!-- Mitad-->
+<div class="grid">
+  <div class="caja" style="grid-column: 1 / 7;">Mitad</div>
+  <div class="caja" style="grid-column: 7 / 13;">Mitad</div>
+</div>
+
+<!-- Tercio -->
+<div class="grid">
+  <div class="caja" style="grid-column: 1 / 5;">Tercio</div>
+  <div class="caja" style="grid-column: 5 / 9;">Tercio</div>
+  <div class="caja" style="grid-column: 9 / 13;">Tercio</div>
+</div>
+
+<!-- Cuarto-->
+<div class="grid">
+  <div class="caja" style="grid-column: 1 / 4;">Cuarto</div>
+  <div class="caja" style="grid-column: 4 / 7;">Cuarto</div>
+  <div class="caja" style="grid-column: 7 / 10;">Cuarto</div>
+  <div class="caja" style="grid-column: 10 / 13;">Cuarto</div>
+</div>
+
+<!-- Sexto-->
+<div class="grid">
+  <div class="caja" style="grid-column: 1 / 3;">Sexto</div>
+  <div class="caja" style="grid-column: 3 / 5;">Sexto</div>
+  <div class="caja" style="grid-column: 5 / 7;">Sexto</div>
+  <div class="caja" style="grid-column: 7 / 9;">Sexto</div>
+  <div class="caja" style="grid-column: 9 / 11;">Sexto</div>
+  <div class="caja" style="grid-column: 11 / 13;">Sexto</div>
+</div>
+
+<!-- filas con huecos blancos -->
+<div class="grid">
+  <div class="caja" style="grid-column: 3 / 6;"></div>
+  <div class="caja" style="grid-column: 8 / 11;"></div>
+</div>
+
+
+<div class="grid">
+  <div class="caja" style="grid-column: 2 / 5;"></div>
+  <div class="caja" style="grid-column: 6 / 10;"></div>
+  <div class="caja" style="grid-column: 11 / 13;"></div>
+</div>
+
+<!-- huecos como num independiente-->
+<div class="grid">
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+  <div class="caja num"></div>
+</div>
+
+    <div class="boton-volver-contenedor">
+      <a href="../../index.html" class="boton-volver"> Volver al index </a>
+    </div>
+</body>
+</html>

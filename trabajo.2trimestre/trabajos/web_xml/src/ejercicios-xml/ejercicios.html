@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Ejercicios XML</title>
+<style>
+    body{
+        background-color: #d9dfeb;
+        color: #000000;
+        padding: 0;
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    header{
+        background-color: #7a8baa;
+        color: #1f3e5e;
+        text-align: center;
+        box-shadow: 0 2px 5px;
+        padding: 20px 10px;
+    }
+    .contenedor{
+        background-color: hsl(221, 33%, 85%);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+    }
+    h3{
+        color: #1f3e5e;
+        text-align: center;
+        margin-top: 0;
+    }
+    section.uno{
+        background-color: #9ba7bb;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+
+    .grid-ejercicios {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .boton-archivo {
+        text-decoration: none;
+        display: block;
+        background-color: #29445f;
+        color: white;
+        padding: 12px;
+        border-radius: 5px;
+        border-bottom: 4px solid #000000;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    .boton-archivo:hover {
+        transform: translateY(-2px);
+        background-color: #3e5f80;
+    }
+    footer{
+        background-color: #7a8baa;
+        color: #1f3e5e;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+    .boton-volver-contenedor {
+        margin: 40px 0;
+        display: flex;
+        justify-content: center;
+    }
+    .boton-volver {
+        text-decoration: none;
+        background-color: #1e293b;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+    }
+</style>
+</head>
+<body>
+   <header>
+        <h1>Ejercicios XML</h1>
+
+    </header>
+
+    <main class="contenedor">
+        
+        <section class="uno">
+            <h3>Ejercicio 1</h3>
+            <div class="grid-ejercicios">
+                <a href="./uno.xml" class="boton-archivo"> XML 1</a>
+            </div>
+        </section>
+
+        <section class="uno">
+            <h3>Ejercicio 2</h3>
+            <div class="grid-ejercicios">
+                <a href="./dos.xml" class="boton-archivo">XML 2</a>
+            </div>
+        </section>
+
+        <section class="uno">
+            <h3>Ejercicio 3</h3>
+            <div class="grid-ejercicios">
+                <a href="./tres.xml" class="boton-archivo">XML 3</a>
+            </div>
+        </section>
+
+        <section class="uno">
+            <h3>Ejercicio 4</h3>
+            <div class="grid-ejercicios">
+                <a href="./cuatro.xml" class="boton-archivo"> XML 4</a>
+            </div>
+        </section>
+
+        <section class="uno">
+            <h3>Ejercicio 5</h3>
+            <div class="grid-ejercicios">
+                <a href="./cinco.xml" class="boton-archivo"> XML 5</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Realizado por <strong>Antonio Javier García Corro</strong>
+        <p>Tarea: Lenguaje de Marcas - 2º Trimestre</p>
+    </footer>
+
+    <div class="boton-volver-contenedor">
+        <a href="../xml.html" class="boton-volver">Volver página  XML</a>
+    </div>
+
+</body>
+</html>

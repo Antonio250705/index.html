@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tarjeta_credito [
+  <!ELEMENT tarjeta_credito (titular, numero, marca, caducidad, cvv, banco_emisor)>
+  <!ELEMENT titular (#PCDATA)>
+  <!ELEMENT numero (#PCDATA)>
+  <!ELEMENT marca (#PCDATA)>
+  <!ELEMENT caducidad (#PCDATA)>
+  <!ELEMENT cvv (#PCDATA)>
+  <!ELEMENT banco_emisor (#PCDATA)>
+]>
+
+<tarjeta_credito>
+    <titular>JUAN PEREZ GOMEZ</titular>
+    <numero>1234567812345678</numero>
+    <marca>Visa</marca>
+    <caducidad>12/28</caducidad>
+    <cvv>123</cvv>
+    <banco_emisor>Banco Santander</banco_emisor>
+</tarjeta_credito>

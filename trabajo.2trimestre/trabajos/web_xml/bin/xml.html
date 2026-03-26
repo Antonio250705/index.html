@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Web explicativa de XML</title>
+<style>
+    body{
+        background-color: #d9dfeb;
+        color: #000000;
+        padding: 0;
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    header{
+        background-color: #7a8baa;
+        color: #1f3e5e;
+        text-align: center;
+        box-shadow: 0 2px 5px;
+        padding-bottom: 10px;
+
+    }
+    header p{ 
+        margin: 0;
+        padding: 10px;
+        color: #000000;
+    }
+    .contenedor{
+        background-color: hsl(220, 28%, 32%);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+    }
+    h3{
+        color: #1f3e5e;
+        text-align: center;
+    }
+    section{
+        margin-bottom: 20px;
+    }
+    section.uno{
+        background-color: #cbd3e0;
+        padding: 15px;
+        border-radius: 5px;
+    }
+    ul{
+        list-style-type:square;
+        padding-left: 20px;
+    }
+    li{
+        margin-bottom: 0.8rem;
+    }
+    .contenedor-foto{
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .texto-izq{
+        flex: 65%
+    }
+    .img-drcha{
+        flex: 35%;
+        display: flex;
+        justify-content: center;
+    }
+    .img-drcha img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+    .caja{
+        background-color: transparent;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+    .boton{
+        display: block;
+        background-color:#29445f ;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        border-bottom: 4px solid #000000;
+        padding-bottom: 10px;
+    }
+    .regla{
+        background-color: #f8f9fa;
+        border-left: 6px solid #1f3e5e ;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer{
+        background-color: #7a8baa;
+        color: #1f3e5e;
+        text-align: center;
+        padding: 10px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+    footer p{
+        margin: 0;
+        padding: 5px;
+        color: #000000;
+    }
+</style>
+
+</head>
+<body>
+    <header>
+        <h1>Resumen de XML</h1>
+        <p>Es  un lenguaje de marcado de propósito general definido por el W3C. El propósito principal del lenguaje es <b>compartir datos a través de diferentes sistemas</b>, como Internet. Es similar a HTML y no está predefinido, es decir,<b>las etiquetas se definen.</b> 
+        </p>
+    </header>
+
+    <main class="contenedor">
+        <section class="uno">
+            <h3>Características de XML</h3>
+            <p>XML es un lenguaje de marcado que permite estructurar datos de manera clara y legible. Sus principales características son:</p>
+            <ul>
+                <li>Lenguaje de estructura libre. No está predefinido. Las etiquetas se definen.</li>
+                <li>Consta de dos partes, el prólogo y el cuerpo</li>
+                <li>Usa espacios de nombres para evitar ambigüedades</li>
+                <li>Su sintaxis es como la de HTML.</li>
+                <li>Debe cumplir las reglas w3c para estar bien formado</li>
+                <li>Utiliza esquemas en forma de árbol con una única raíz.</li>
+            </ul>
+        </section>
+
+
+        <section class="uno">
+            <h3>Estructura de XML</h3>
+            <div class="contenedor-foto">
+                <div class="texto-izq">
+                    <p>La estructura de un documento XML consta de un prólogo y un cuerpo.Vamos a ver sus dos partes:</p>
+                    <h5><strong>PRÓLOGO</strong></h5>
+                    <ul>
+                        <li>Declaración XML</li>
+                        <li>Información del documento</li>
+                        <ul>
+                            <li>Hojas de estilo XSLT</li>
+                            <li>Hojas de estilo CSS</li>
+                            <li>Validacion DTD (interna o externa)</li>
+                        </ul>
+                    </ul>
+                    <hr>
+                    <h5><strong>CUERPO</strong></h5>
+                    <ul>
+                        <li>Raíz. Árbol de contenido</li>
+                        <ul>
+                            <li>Espacio de nombres</li>
+                            <li>Validación de XSD</li>
+                        </ul>
+                        <li>Elementos XML</li>
+                    </ul>
+                </div>
+                <div class="img-drcha">
+                    <img src="../img/L3_001.jpg">
+                </div>
+            </div>
+        </section>
+
+
+        <section class="uno">
+          <h3>Ejercicios XML</h3>
+          <div class="caja">
+            <a href="./ejercicios-xml/ejercicios.html" class="boton">Ejercicios de XML</a>
+          </div> 
+        </section>
+
+
+        <section class="uno">
+            <h3>Reglas sintácticas de XML</h3>
+            <p>No es como HTML. Si no está bien formado dará error. Debes tener en cuenta las siguientes instrucciones: </p>
+            <div class="regla">
+                <strong>Prólogo</strong>
+                Debe estar definido con su versión y codificación correspondiente.
+            </div>
+            <br>
+            <div class="regla">
+                <strong>Jerarquía</strong>
+                Estructura de árbol con un único nodo raíz obligatorio.
+            </div>
+            <br>
+            <div class="regla">
+                <strong>Emparejamiento</strong>
+                Todas las etiquetas deben tener su apertura y cierre correspondiente.
+            </div>
+            <br>
+            <div class="regla">
+                <strong>Atributos</strong>
+               Los valores de los atributos deben ir siempre entre comillas (simples o dobles).
+            </div>
+            <br>
+            <div class="regla">
+                <strong>Case Sensitive</strong>
+                El lenguaje distingue estrictamente entre mayúsculas y minúsculas.
+            </div>
+            <br>
+            <div class="regla">
+                <strong>Nomenclatura</strong>
+                Los nombres de etiquetas siguen reglas similares a las variables en programación.
+            </div>
+        </section>
+    </main>
+
+<br>
+
+    <footer>
+        Realizado por <strong>Antonio Javier García Corro</strong>
+        <hr>
+        <p>Esta página es una tarea de clase de la asignatura Lenguaje de Marcas</p>
+    </footer>
+    
+</body>
+</html>

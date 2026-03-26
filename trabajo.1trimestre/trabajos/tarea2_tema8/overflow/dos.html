@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Overflow</title>
+    <style>
+        html{
+        height: 100%;
+    }
+
+    #cabecera {
+        background-color:darkseagreen;
+        color:darkgreen;
+        text-align: center;
+        padding: 20px;
+      }
+
+    h1{
+        color:darkgreen;
+        background-color: darkseagreen;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    ul{
+        text-align: justify;
+    }
+
+    p{
+        font-size:large;
+    }
+    .visible{
+        overflow:visible;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Overflow</h1>
+    <br>
+    <div id="cabecera">
+        <p>Controla el comportamiento de un contenedor cuando su contenido es más grande que el contenedor mismo y se desborda
+            <br>
+        <ul>
+            <li><b>visible:</b> Este es el valor por defecto. El contenido que se desborda simplemente se muestra fuera del contenedor, sobresaliendo visualmente.
+            <li><b>hidden:</b> El contenido que se desborda está oculto y no es visible. Esto puede ser útil cuando no quieres que el contenido que sobresale sea visible.
+            <li><b>scroll:</b> agrega una barra de desplazamiento al contenedor, permitiendo al usuario desplazarse para ver el contenido que está fuera de la vista.
+            <li><b>auto:</b> Similar a scroll, pero se agregarán barras de desplazamiento solo cuando sea necesario. Si el contenido se ajusta dentro del contenedor, no se mostrarán barras de desplazamiento.
+
+            </li>
+        </ul>
+        </p>
+    <br>
+      </div>
+    <br>
+    
+   <h2 class="final"><a href="../index_tema8.html">Volver</a></h2> 
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Ajedrez index</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --bg-color: #f8fafc;
+            --text-dark: #1e293b;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #cabecera {
+            background-color: #f1cfb3;
+            color: #1a3a32;
+            text-align: center;
+            padding: 50px 20px;
+            border: black 4px solid;
+            border-bottom: black 5px solid;
+            width: 100%;
+        }
+
+        #cabecera h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo {
+            font-weight: 300;
+        }
+
+        .contenedor {
+            flex: 1; 
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 60px 20px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid #ff7809;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            text-align: center;
+            color: #334155;
+            font-weight: 700;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .links-grid a {
+            text-decoration: none;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 15px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            border: 1px solid transparent;
+        }
+
+        .links-grid a:hover {
+            background: #ffffff;
+            color: #ff8801;
+            border-color: #eea300;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.1);
+        }
+
+        .boton-volver-contenedor {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            
+        }
+
+        .boton-volver {
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+        }
+        p{
+            text-align: center;
+        }
+        footer{
+            background-color: #f1cfb3; 
+            border-top: 5px solid #000000; 
+            padding: 25px 0;
+            color: #1a3a32; 
+            width: 100%;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header id="cabecera">
+        <h1>Trabajo 2º Trimestre</h1>
+        <p class="subtitulo">agc0147</p>
+    </header>
+
+    <main class="contenedor">
+        <div class="content-card">
+            <h2>Tableros de ajedrez</h2>
+            <hr>
+            <p>Tema 09</p>
+            <br>
+            <div class="links-grid">
+                <a href="./ajedrez-fluid/fluid.html"> Tablero de ajedrez - Fluid</a>
+                <a href="./ajedrez-fixed/fixed.html"> Tablero de ajedrez - Fixed</a>
+                <a href="./ajedrex-flex/flex.html"> Tablero de ajedrez - Flex</a>
+                <a href="./ajedrez-grid/grid.html"> Tablero de ajedrez - Grid</a>
+                <a href="./ajedrez-responsive/responsive.html"> Tablero de ajedrez - Responsive</a>
+            </div>
+        </div>
+
+     <div class="boton-volver-contenedor">
+            <a href="../../index.html" class="boton-volver">Volver al index principal</a>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+        <hr>
+        <p>Lenguaje de marcas</p>
+    </footer>
+  
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Resumen de XML: XPath y JSON</title>
+    <style>
+        body {
+            background-color: #f3f4f6; 
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 40px;
+            color: #374151; 
+            line-height: 1.6;
+        }
+        .cabecera {
+            text-align: center;
+            background-color: #dad9d9;
+            padding: 30px;
+            border: 1px solid #d1d5db;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .introduccion {
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            color: #302e30;
+        }
+        .cuerpo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .caja {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 25px;
+            border-radius: 4px;
+        }
+        .larga {
+            grid-column: span 2;
+        }
+        h3 {
+            margin-top: 0;
+            color: #1f2937;
+            border-bottom: 2px solid #9ca3af;
+            padding-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+            text-align: left;
+        }
+        th { background-color: #f9fafb; }
+
+        .seccion-enlaces {
+            margin-top: 30px;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 20px;
+            text-align: center;
+        }
+        .enlace-grande {
+            display: inline-block;
+            background-color: #4b5563;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .enlace-grande:hover { 
+            background-color: #1f2937;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #d1d5db;
+            font-size: 0.85em;
+            color: #6b7280;
+        }
+        .boton-volver-contenedor {
+        margin: 40px 0;
+        display: flex;
+        justify-content: center;
+        }
+        .boton-volver {
+        text-decoration: none;
+        background-color: #1e293b;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecera">
+        <h1>Resumen de Tecnologías XML y XPath</h1>
+        <p class="introduccion">
+            Esta página resume los conceptos clave del Tema 12, centrándose en el lenguaje XPath para la navegación de nodos y el formato JSON para el intercambio de datos.
+        </p>
+    </header>
+
+    <main class="cuerpo-grid">
+
+        <div class="caja">
+            <h3>1. Herramientas y Lenguajes</h3>
+            <p><strong>BaseX:</strong> Aplicación para manejar bases de datos XML nativas.</p>
+            <ul>
+                <li><strong>XPath:</strong> Localiza elementos en el árbol.</li>
+                <li><strong>XSLT:</strong> Transforma XML a HTML u otros formatos.</li>
+                <li><strong>XSL-FO:</strong> Para formatos de impresión como PDF.</li>
+            </ul>
+            <img src="../web-tema12/img/xbase.png" alt="Foto del árbol XML" style="width: 40%; display: block; margin: 0 auto; margin-bottom: 10px;">
+            <a href="https://basex.org/download/" style="color: #34383d;">Descargar BaseX</a>
+        </div>
+
+        <div class="caja">
+            <h3>2. Estructura de Nodos</h3>
+            <p>El XML se organiza como un árbol familiar (Raíz, descendientes, hermanos). El nodo raíz siempre es <code>/</code>.</p>
+            <img src="../web-tema12/img/arbol-nodo.png" alt="Foto del árbol XML" style="width: 100%;">
+        </div>
+
+        <div class="caja larga">
+            <h3>3. Resumen de Sintaxis y Selección</h3>
+            <table>
+                <tr>
+                    <th>Sintaxis</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td><code>//nodo</code></td>
+                    <td>Selecciona nodos en cualquier parte del documento.</td>
+                </tr>
+                <tr>
+                    <td><code>@atributo</code></td>
+                    <td>Selecciona atributos del elemento.</td>
+                </tr>
+                <tr>
+                    <td><code>..</code></td>
+                    <td>Selecciona el padre del nodo actual.</td>
+                </tr>
+                <tr>
+                    <td><code>text()</code></td>
+                    <td>Selecciona solo el texto contenido.</td>
+                </tr>
+            </table>
+            <p><small>* Los predicados se escriben entre corchetes <code>[...]</code> para filtrar resultados.</small></p>
+        </div>
+
+        <div class="caja larga">
+            <h3>4. Formatos</h3>
+            <strong>Formato JSON:</strong>
+            <p>JSON es un formato ligero basado en pares clave-valor. Es más legible y fácil de procesar que el XML en entornos web.</p>
+            <div style="display: flex; gap: 20px;">
+            <pre style="background: #111827; color: #fff; padding: 15px; flex: 1;">
+                    {
+                    "empresa": "Tech Solutions",
+                    "empleados": [
+                        { "nombre": "Carlos", "edad": 30 },
+                        { "nombre": "Ana", "edad": 25 }
+                    ]
+                    }
+            </pre>
+        <div style="flex: 1;">
+            <strong>Formato YAML:</strong>
+                <ul>
+                    <li>Sintaxis limpia y sin comillas.</li>
+                    <li>Se basa en la indentación.</li>
+                    <li>Independiente del lenguaje.</li>
+                </ul>
+            <pre style="background: #111827; color: #fff; padding: 15px; flex: 1; font-size: 0.8em;">
+                    # Ejemplo YAML (indentación)
+                    asignatura: LM
+                    tema: 12
+                    contenidos:
+                    - BaseX
+                    - XQuery
+                    - JSON
+                    completo: true
+            </pre>
+        </div>     
+    </div>
+    </div>
+    </main>
+
+    <section class="seccion-enlaces">
+        <h3>XPATH</h3>
+        <a href="../web-tema12/xpath/xpath.html" class="enlace-grande">EJERCICIOS Y EJEMPLOS </a>
+    </section>
+
+    <footer>
+        <p>Realizado por: <strong>Antonio Javier García Corro</strong></p>
+        <p>Este es un trabajo de clase para la asignatura de Lenguajes de Marcas.</p>
+    </footer>
+
+     <div class="boton-volver-contenedor">
+            <a href="../../index.html" class="boton-volver"> Volver al index principal</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Fuentes con CSS</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+US+Trad+Guides&display=swap" rel="stylesheet">
+  
+<style>
+
+    .fuentesegura{
+        font-family:'Times New Roman', Times, serif;
+    }
+    @font-face {
+        font-family: FuenteDescargada;
+        src: url(./Rubik_Wet_Paint/RubikWetPaint-Regular.ttf);
+    }
+    .font{
+        font-family: FuenteDescargada;
+    }
+    .playwrite{
+        font-family: 'Playwrite+US+Trad+Guides', Courier, monospace;
+        font-weight: 400; 
+        font-size: 1.2em;
+    }
+
+
+    .cabecera{
+        color:white;
+        background-color: rgb(66, 117, 211);
+        padding: 5px;
+        text-align:center;
+        height: 100px;
+        justify-content: center;
+        vertical-align: center;
+        padding-top: 70px;
+    }
+    h1{
+        margin: 0 auto;
+    }   
+    .footer{
+        text-align: center;
+        margin-top: 40px;
+    }
+    main{
+        box-sizing: border-box;
+        background-color: rgb(219, 160, 160);
+        margin: 2px;
+        border-radius: 2px;
+        padding: 2px;
+        box-shadow: 2px 2px 2px 3px rgba(122, 63, 63, 0.3);
+        margin-top: 40px;
+        border-radius: 20px;
+        width: fit-content;
+        justify-content: center;
+        text-align: center;
+    }
+    body{
+        background-color: antiquewhite;
+    }
+    footer{
+        margin: 0 auto;
+        justify-content: center;
+        text-align: center;
+    }
+    .final{
+        background-color: aquamarine;
+        color: black;
+        width:fit-content;
+        width:33vw;
+        padding: 5px 10px;
+    }
+
+</style>
+</head>
+<body>
+    <header class = "cabecera fuentesegura">
+    <h1>Fuentes con CSS</h1>
+    </header>
+
+    <main>
+        <h2 class = "fuentesegura">1. Fuente segura del Sistema</h2>
+    <br>
+        <p class = "fuentesegura">Este texto utiliza una fuente segura instalada en la mayoría de dispositivos (Impact en este caso), lo que garantiza su disponibilidad sin necesidad de descargarse.</p>
+    <br>
+        <h2 class = "font">2.Fuente descargada mediante @font-face</h2>
+    <br>
+        <p class = "font">Este parrafo utiliza una fuente almacenada localmente en el proyecto e incorporada con la regla @font-face.</p>
+    <br>
+        <h2 class = "playwrite">3.Fuente enlazada desde Google Fonts</h2>
+    <br>
+        <p class = "playwrite">Este texto emplea la fuente "playwrite" cargada desde Google Fonts a través de un enlace en la cabecera.</p>
+    <br>
+    </main>
+        
+    <footer>
+        <p>Autor: Antonio García Corro</p>
+    </footer>
+    <h2 class="final"><a href="../../index2.html">Volver a la página principal</a></h2>
+</body>
+</html>

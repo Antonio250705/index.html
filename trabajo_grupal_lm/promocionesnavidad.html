@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <meta name="author" content="Carlos Javier Millan Villarejo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Promociones de navidad</title>
+    <style>
+    :root{
+        --fondo-oscuro: #2e0c0c;
+        --rojo: #c62828;
+        --blanco: #ffff;
+        --sombra: rgba(0, 0, 0, 0.4);
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    *{
+        font-family: "Noto Sans";
+    }
+
+    body{
+        color: var(--blanco);
+        background-color: var(--fondo-oscuro);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url("imagenes/fondopromociones.png");
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .contenedor{
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-grow: 1;
+    }
+    .promociones{
+        display: grid;
+        gap: 30px;
+        padding: 20px 0;
+    }
+    .caja-promo{
+        background-color:rgba(49, 13, 13, 0.9);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        border: 2p solid var(--rojo);
+        overflow: hidden;
+        box-shadow: 0 8px 20px var(--sombra);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .boton-compra{
+        color: var(--blanco);
+        background-color: var(--rojo);
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        border: 2px solid var(--rojo);
+        transition:background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease ;
+    }
+
+
+    .caja-promo img{
+        max-width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+footer{
+    background-color: var(--fondo-oscuro);
+    border: 2px rgb(12, 12, 12);
+    bottom: 0; 
+    left: 0; 
+    right: 0;
+    justify-content: center;
+    text-align: center;
+}
+
+footer p{
+    color: rgb(255, 255, 255);
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+a{
+    display: flex;
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 0.1em 1em;
+    color: rgb(255, 255, 255);
+}
+
+    </style>
+</head>
+
+<body>
+    <main class="contenedor">
+        <section class="promociones">
+
+            <article class="caja-promo">
+                <img src="./imagenes/chocolates.jpg" alt="Pack de Chocolates Artesanos">
+                <h2> Pack "El Tesoro del Duende"</h2>
+                <h3>20% de descuento</h3>
+                <p>De las mejores elecciones de chocolates artesanos, perfetos para los paladares más exigentes. Desde trufas de avellana hasta tabletas de pistacho. Ideal para regalar o darte un capricho navideño!! </p>
+                <small> Antes: <del>24.99 euros</del></small>
+                <b> Ahora: 19.99 euros</b>
+                <a href="#" class="boton-compra"> ¡Lo quiero!</a>
+            </article>
+
+            <article class="caja-promo">
+                <img src="./imagenes/chuches.jpg" alt="Caja XXL Gominolas Navideñas">
+                <h2>Caja XXl "El polo Norte Dulce"</h2>
+                <h3>2x1 en tus chuches favoritas!</h3>
+                <p>Edición especial navideña, dentro encontrarás miles de sorpresas unicas, que no te esperabas ni de regalo! Comprueba tu mismo el autentico sabor dulce navideño. <strong> ¡Doble diversión para compartir!</strong></p>
+                <small> Antes: <del>35.99 euros</del></small>
+                <b> Ahora: 18.39 euros</b>
+                <a href="#" class="boton-compra"> ¡Al carrito!</a>
+            </article>
+
+            <article class="caja-promo">
+              <figure> <img src="./imagenes/calendario.jpg" alt="Calendario de adviento"></figure> 
+                <h2>Calendario de Adviento</h2>
+                <h3>Modelo único</h3>
+                <h4>La cuenta atrás para Navidad nunca fue tan sabrosa. Cada día, descubre una mini sorpresa de chocolate o una chuche única. ¡Perfecto para niños y adultos que conservan la ilusión!</h4>
+                <h5><strong> 24,44 euros </strong></h5>
+                <a href="#" class="boton-compra"> ¡Sorprendete!</a>
+            </article>
+
+        
+        </section>
+    </main>
+
+    <footer>
+        <p class = "footer p">© 2025 Dulces Sueños Navideños. Todas las promociones son válidas hasta el 6 de enero o fin de existencias.</p>
+    </footer>
+
+<footer>
+<a href="index.html"><div class = "footer">
+<h2>Inicio</h2></div></a>
+</footer>
+
+
+
+</body>
+</html>

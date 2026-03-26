@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carlos Javier Millán Villarejo">
+    <meta name="author" content="Antonio Javier García Corro">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>Web Estática de Chuches</title>
+
+
+<style>
+
+
+*{
+    font-family: "Noto Sans";
+}
+
+
+nav{
+    position:fixed;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    background-color: #f8f8f8;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+    padding: 1em;
+    margin: 0;
+    color:black;
+    z-index: 9999;
+    
+
+}
+body{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    justify-content: center;
+    text-align: center;
+    background-image: url(./imagenes/fondopaginaweb.png);
+     background-repeat: no-repeat;
+        background-size: cover;
+}
+nav a{
+    margin-right: 2.5em;
+    font-size: 140%;
+    color:black;
+    text-decoration: underline 2px rgba(182, 11, 11, 0);
+    transition: 0.3s ease;
+    font-weight: 700;
+}
+nav a:hover{
+    text-decoration: underline 2px rgba(166, 91, 17, 1);
+}
+.imagenbienvenida{
+    margin-top: 4em;
+}
+.categorias{
+    height: 16vh;
+    width: 23vw;
+    background-color: white;
+    border-radius:80px;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+    margin: 4em 2em;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s;
+    transition: ease 0.3s;
+    border: 10px #276101;
+    border-width: 15px;
+    border-style: double;
+    align-items: center;
+}
+.categorias h2{
+    color:rgb(192, 41, 41);
+    font-size: 260%;
+    justify-content: center;
+    text-align: center;
+    padding-top:9px ;
+    align-items: center;
+  
+}
+.categorias:hover{
+    transform: translateY(-1em);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.chocolatessa{
+    height: 16vh;
+    width: 23vw;
+    background-color: white;
+    border-radius:80px;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+    margin: 4em 2em;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s;
+    transition: ease 0.3s;
+    border: 10px #276101;
+    border-width: 15px;
+    border-style: double;
+    align-items: center;
+}
+.chocolatessa h2{
+    color:rgb(192, 41, 41);
+    font-size: 260%;
+    justify-content: center;
+    text-align: center;
+    padding-top:0px ;
+    align-items: center;
+    margin-top: 13px;
+  
+}
+.chocolatessa:hover{
+    transform: translateY(-1em);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+.chuchessa{
+    height: 16vh;
+    width: 23vw;
+    background-color: white;
+    border-radius:80px;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+    margin: 4em 2em;
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.3s;
+    transition: ease 0.3s;
+    border: 10px #276101;
+    border-width: 15px;
+    border-style: double;
+    align-items: center;
+}
+.chuchessa h2{
+    color:rgb(192, 41, 41);
+    font-size: 260%;
+    justify-content: center;
+    text-align: center;
+    padding-top:0px ;
+    align-items: center;
+    margin-top: 18px;
+  
+}
+.chuchessa:hover{
+    transform: translateY(-1em);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+footer{
+    border:3px solid black;
+    background-color: rgb(236, 52, 52);
+    color: white;
+    height: 80px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    
+}
+
+footer p{
+    text-align: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+details{
+    color: white;
+}
+.final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+        }
+
+</style>
+
+
+</head>
+<body>
+    
+ <nav>
+    <a href="contacto.html">Contacto</a>
+    <a href="promocionesnavidad.html">Promociones de Navidad</a>
+    <a href="informacion.html">Información</a>
+ </nav>
+
+ <a href="#chuches"><img class = "imagenbienvenida"src="./imagenes/imagen.png" alt="Imagen de Oferta"></a>
+
+<a href="./chuches/chuches.html"><div class = "categorias">
+<h2>Chuches</h2></div></a>
+
+<a href="./chocolatinas/chocolatinas.html"><div class = "categorias">
+<h2>Chocolatinas</h2></div></a>
+
+<a href="./chuchessa/chuchessinazucar.html"><div class = "chuchessa">
+<h2>Chuches 0 Azúcares Añadidos</h2></div></a>
+
+<a href="./chocolatessa/chocolatessinazucar.html"><div class = "chocolatessa">
+<h2>Chocolates 0 Azúcares Añadidos</h2></div></a>
+<br>
+
+<a href="./catalogo.html"><div class = "categorias">
+<h2>Catálogo Extra</h2></div></a> 
+
+<details>
+    ALUMNOS DE 1º DAW DAVANTE MEDAC: ASIGNATURA DE LENGUAJES DE MARCAS
+</details>
+<footer>
+    <span>Hecho por Antonio Javier García Corro y Carlos Javier Millán Vilarejo</span><h6> 1ºDAW Davante Medac</h6> 
+   
+</footer>
+<h2 class="final"><a href="../index.html">Volver a la página principal</a></h2>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tarjeta_credito [
+  <!ELEMENT tarjeta_credito (emisor, titular, datos_tarjeta, seguridad)>
+  <!ELEMENT emisor (banco, red)>
+  <!ELEMENT banco (#PCDATA)>
+  <!ELEMENT red (#PCDATA)> <!ELEMENT titular (nombre_completo)>
+  <!ELEMENT nombre_completo (#PCDATA)>
+  <!ELEMENT datos_tarjeta (numero, fecha_caducidad)>
+  <!ELEMENT numero (#PCDATA)>
+  <!ELEMENT fecha_caducidad (mes, anio)>
+  <!ELEMENT mes (#PCDATA)>
+  <!ELEMENT anio (#PCDATA)>
+  <!ELEMENT seguridad (cvv, tipo_chip)>
+  <!ELEMENT cvv (#PCDATA)>
+  <!ELEMENT tipo_chip (#PCDATA)>
+]>
+
+<tarjeta_credito>
+    <emisor>
+        <banco>Banco Medac</banco>
+        <red>Mastercard</red>
+    </emisor>
+
+    <titular>
+        <nombre_completo>ANTONIO JAVIER GARCIA CORRO</nombre_completo>
+    </titular>
+
+    <datos_tarjeta>
+        <numero>5412 7512 3456 7890</numero>
+        <fecha_caducidad>
+            <mes>12</mes>
+            <anio>2028</anio>
+        </fecha_caducidad>
+    </datos_tarjeta>
+
+    <seguridad>
+        <cvv>789</cvv>
+        <tipo_chip>EMV Contactless</tipo_chip>
+    </seguridad>
+</tarjeta_credito>

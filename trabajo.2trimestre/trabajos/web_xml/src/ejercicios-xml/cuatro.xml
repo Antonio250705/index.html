@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dni [
+  <!ELEMENT dni (numero, soporte, primer_apellido, segundo_apellido, nombre, sexo, nacionalidad, fecha_nacimiento, validez, direccion)>
+  <!ELEMENT numero (#PCDATA)>
+  <!ELEMENT soporte (#PCDATA)>
+  <!ELEMENT primer_apellido (#PCDATA)>
+  <!ELEMENT segundo_apellido (#PCDATA)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT sexo (#PCDATA)>
+  <!ELEMENT nacionalidad (#PCDATA)>
+  <!ELEMENT fecha_nacimiento (#PCDATA)>
+  <!ELEMENT validez (#PCDATA)>
+  <!ELEMENT direccion (domicilio, lugar, provincia)>
+  <!ELEMENT domicilio (#PCDATA)>
+  <!ELEMENT lugar (#PCDATA)>
+  <!ELEMENT provincia (#PCDATA)>
+]>
+<dni>
+    <numero>12345678Z</numero>
+    <soporte>AAA000000</soporte>
+    <primer_apellido>García</primer_apellido>
+    <segundo_apellido>Pérez</segundo_apellido>
+    <nombre>Alejandro</nombre>
+    <sexo>M</sexo>
+    <nacionalidad>ESPAÑOLA</nacionalidad>
+    <fecha_nacimiento>1990-05-15</fecha_nacimiento>
+    <validez>2030-05-15</validez>
+    <direccion>
+        <domicilio>Calle Falsa 123</domicilio>
+        <lugar>Córdoba</lugar>
+        <provincia>Córdoba</provincia>
+    </direccion>
+</dni>

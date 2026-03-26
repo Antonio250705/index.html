@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo [
+  <!ELEMENT catalogo (libro+)>
+  <!ELEMENT libro (titulo, autor, capitulo+)>
+  <!ATTLIST libro paginas CDATA #REQUIRED>
+  <!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT autor (#PCDATA)>
+  <!ELEMENT capitulo (titulocap, texto)>
+  <!ELEMENT titulocap (#PCDATA)>
+  <!ELEMENT texto (#PCDATA)>
+]>
+
+<catalogo>
+    <libro paginas="450">
+        <titulo>Don Quijote de la Mancha</titulo>
+        <autor>Miguel de Cervantes</autor>
+        <capitulo>
+            <titulocap>Capítulo 1</titulocap>
+            <texto>Que trata de la condición y ejercicio del famoso hidalgo...</texto>
+        </capitulo>
+        <capitulo>
+            <titulocap>Capítulo 2</titulocap>
+            <texto>Que trata de la primera salida que de su tierra hizo el ingenioso Don Quijote.</texto>
+        </capitulo>
+    </libro>
+
+    <libro paginas="145">
+        <titulo>El Principito</titulo>
+        <autor>Antoine de Saint-Exupéry</autor>
+        <capitulo>
+            <titulocap>Capítulo 1</titulocap>
+            <texto>Cuando yo tenía seis años vi una vez una lámina magnífica...</texto>
+        </capitulo>
+    </libro>
+</catalogo>

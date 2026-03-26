@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Posicionamiento 04</title>
+<style>
+/*Nada en el documento de Medac*/
+    *{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    div.azul{
+        background-color: blue;
+        width: 100%;
+        height: 20%;
+        font-size: 200%;
+    }
+
+    div.rojo{
+        background-color: red;
+        width: 30%;
+        height: 70%;
+        float: left;
+    }
+
+    div.verde{
+        background-color: green;
+        width: 30%;
+        height: 70%;
+        float: left;
+    }
+
+    div.amarillo{
+        background-color: yellow;
+        width: 40%;
+        height: 70%;
+        float: left;
+    }
+
+    div.naranja{
+        background-color: orangered;
+        width: 100%;
+        height: 20%;
+        clear: both;
+    }
+    .boton-volver {
+        position: fixed;
+        top: 800px;
+        left: 800px;
+        display: inline-flex;      
+        align-items: center;       
+        justify-content: center;
+        height: 40px;              
+        padding: 0 20px;           
+        border-radius: 20px;     
+        background-color: #1e293b;
+        color: white;
+    }
+    .boton-volver a {
+    color: white;
+    text-decoration: none; 
+    }
+
+</style>
+</head>
+<body>
+    <main>
+        <div class="azul">
+            <h1>Título largo en Azul</h1>
+        </div>
+        <div class="rojo">
+            <p>Rojo</p>
+        </div>
+        <div class="verde">
+            <p>Verde</p>
+        </div>
+        <div class="amarillo">
+            <p>Amarillo</p>
+        </div>
+        <div class="naranja">
+            <p>Naranja</p>
+        </div>
+    </main>
+    <h2 class="boton-volver"><a href="../posicionamientos.html">Volver a Posicionamientos</a></h2>
+</body>
+</html>

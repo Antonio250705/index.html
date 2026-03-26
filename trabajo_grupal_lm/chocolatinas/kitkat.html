@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Carlos Javier Millán Villarejo">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Informacion de Kitkat</title>
+
+<style>
+
+:root {
+            
+    --color-kitkat-chocolate: #654321;     
+    --color-kitkat-crema: #f5e8d5;         
+    --color-kitkat-madera: #b7a69c;        
+    --color-kitkat-acento: #e53935;        
+    --color-kitkat-texto: #333333;         
+}
+
+
+body{
+    background-image: url("../imagenes/fondokitkat.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contenedor {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #c5b5b5;
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 5px solid black;
+    margin-top: 20px;
+
+}
+header{
+    text-align: center;
+    justify-content: center;
+    border: 5px solid black;
+    background-color: var(--color-kitkat-crema);
+}
+header h1{
+    color:rgb(7, 7, 7);
+}
+.cuadradoprincipal {
+    padding: 30px;
+}
+.cuadradoizquierda {
+    background-color: white;
+    border-right: 5px solid #141414; 
+}
+.cuadradoderecha {
+    background-color: #fcfbfa;
+}
+h2 {
+    color: var(--color-kitkat-chocolate); 
+    border-bottom: 2px solid var(--color-kitkat-chocolate);
+    padding-bottom: 5px;
+    margin-top: 20px;
+ 
+}
+
+/* Estilos de la Tabla Nutricional */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border: 3px solid black;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px dashed #ccc;
+    border: 2px solid black;
+    background-color: var(--color-milka-lila);
+}
+
+th {
+    background-color: var(--color-kitkat-acento); 
+    color: #333;
+    font-weight: bold;
+}
+
+.alergenos {
+    color: #e53935; 
+}
+
+footer{
+    height: 1.5vh;
+    width: 18em;
+    background-color: #fefffe;
+    border-radius:40px;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.25);
+    justify-content: center;
+    text-align: center;
+    border: 10px white;
+    border-width: 15px;
+    margin-top: 170px;
+    display: flex;
+    align-items: center;
+    padding:0.6em 0.5em;
+    text-decoration: none;
+    margin-left: 785px;
+    border: 2px solid black;
+    
+}
+footer h2{
+    justify-content: center;
+    text-align: center; 
+    margin:0 auto;
+    margin-top: 0px;
+    vertical-align: center;
+    text-decoration: none;
+    color: #050505;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<header>
+    <h1>KitKat - Información Detallada del Producto</h1>
+</header>
+
+
+<div class="contenedor">
+        
+    <div class="cuadradoprincipal cuadradoizquierda">
+        <h2><b>Tabla Nutricional (Tabla Chocolate Milka ~50g)</b></h2>
+            
+        <table>
+                
+            <tr>
+                <th>Componente</th>
+                <th>Por 100 g</th>
+                <th>Por Porción (~25 g)</th>
+            </tr>
+                
+              
+            <tr>
+                <td>Valor Energético</td>
+                <td>2220 kJ / 530 kcal</td>
+                <td>555 kJ / 132.5 kcal</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>Grasas</td>
+                <td>29.5 g</td>
+                <td>7.4 g</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>- de las cuales Saturadas</td>
+                <td>17.5 g</td>
+                <td>4.4 g</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>Hidratos de Carbono</td>
+                <td>58.5 g</td>
+                <td>14.6 g</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>- de los cuales Azúcares</td>
+                <td>58.0 g</td>
+                <td>14.5 g</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>Proteínas</td>
+                <td>6.4 g</td>
+                <td>1.6 g</td>
+            </tr>
+                    
+            
+            <tr>
+                <td>Sal</td>
+                <td>0.37 g</td>
+                <td>0.09 g</td>
+            </tr>
+             
+        </table>
+          <br> 
+            <p>Los valores pueden variar ligeramente según la región y el formato específico del producto.</p>
+        </div>
+        
+        <div class="cuadradoprincipal cuadradoderecha">
+            <h2><b>Ingredientes Principales</b></h2>
+            <ol>
+                <li>Azúcar</li>
+                <li>Manteca de Cacao</li>
+                <li>Leche desnatada en polvo (ingrediente clave)</li>
+                <li>Pasta de cacao</li>
+                <li>Suero de leche en polvo</li>
+                <li>Grasa de leche (Materia grasa láctea)</li>
+                <li>Emulgente (Lecitina de soja)</li>
+                <li>Pasta de avellana</li>
+                <li>Aroma (Vainilla)</li>
+            </ol>
+            
+            <h2><b>Alérgenos</b></h2>
+            <p>Producto fabricado con alérgenos. Consumir con precaución si se tienen intolerancias.</p>
+            <ul class="alergenos">
+                <li><b>Leche</b></li>
+                <li><b>Soja</b></li>
+                <li><b>Frutos de cáscara (Avellanas)</b></li>
+            </ul>
+            <p>Puede contener trazas de otros frutos de cáscara y trigo (gluten).</p>
+        </div>
+
+    </div>
+
+<footer>
+<a href="chocolatinas.html"><div class = "footer">
+<h3 style = "font-size: 1.5em">Volver a Chocolatinas</h3></div></a>
+</footer>
+
+
+</body>
+</html>

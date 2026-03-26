@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Posicionamiento 07</title>
+<style>
+    *{
+        
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header{
+        background-color:darkblue ;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        font-size: 200%;
+    }
+    img{
+        width: 350px;
+        height: auto;
+    }
+    .foto-izq{
+        float: left;
+        margin-right: 20px;
+    }
+    .foto-drcha{
+        float: right;
+        margin-left: 20px;
+    }
+    main{
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    div.primero{
+        overflow: hidden;
+        margin-bottom: 30px;
+        background-color: rgb(248, 225, 196);
+    }
+    div.segundo{
+        overflow: hidden;
+        margin-bottom: 30px;
+        background-color: rgb(245, 220, 187);
+    }
+    p{
+        text-align: justify;
+        font-size: medium;
+        line-height: 1.7;
+    }
+    .boton-volver {
+        position: fixed;
+        top: 800px;
+        left: 800px;
+        display: inline-flex;      
+        align-items: center;       
+        justify-content: center;
+        height: 40px;              
+        padding: 0 20px;           
+        border-radius: 20px;     
+        background-color: #1e293b;
+        color: white;
+    }
+    .boton-volver a {
+    color: white;
+    text-decoration: none; 
+    }
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Fluid Layout</h1>
+    </header>
+    <main>
+        <div class="primero">
+            <img src="../../ajedrez/ajedrez-fluid/imagenes/black-horse.png" class="foto-izq">
+            <p>El caballo negro en el ajedrez no es solo una pieza; es el rebelde del tablero. Mientras las demás piezas se desplazan en líneas rectas o diagonales aburridas, el caballo ignora las barricadas y salta sobre sus aliados y enemigos por igual.s el rey de las tácticas de corto alcance. Su movimiento le permite realizar horquillas o dobletes (atacar dos o más piezas a la vez) con una facilidad pasmosa. No hay sensación más frustrante para un jugador de blancas que ver cómo un caballo negro se planta amenazando simultáneamente al rey y a la torre.</p>
+        </div>
+
+        <div class="segundo">
+            <img src="../../ajedrez/ajedrex-flex/imagenes/white-queen.png" class="foto-drcha">
+            <p>Si el caballo es el rebelde táctico, la Reina Blanca es la monarca absoluta del tablero. Es, sin duda, la pieza más poderosa, versátil y determinante del juego. En el bando de las blancas, ella personifica la iniciativa y el ataque directo desde el primer movimiento. En la escala de puntuación estándar, la reina tiene un valor de 9 puntos. Es tan valiosa que su pérdida suele significar la derrota inmediata, a menos que se trate de un "sacrificio de dama" brillante para lograr un jaque mate inevitable.</p>
+        </div>
+    </main>
+    <h2 class="boton-volver"><a href="../posicionamientos.html">Volver a Posicionamientos</a></h2>
+</body>
+</html>

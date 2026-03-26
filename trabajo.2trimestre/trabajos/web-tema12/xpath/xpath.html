@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>XPath</title>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 40px;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #d1d5db;
+            margin-bottom: 25px;
+        }
+
+        h1 { 
+            color: #111827; 
+            text-transform: uppercase; 
+            margin-bottom: 10px; 
+        }
+
+        .intro { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            color: #4b5563; 
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .caja-blanca {
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 25px;
+            border-radius: 4px;
+        }
+
+        .larga { 
+            grid-column: span 2; 
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #1f2937;
+            border-bottom: 2px solid #9ca3af;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th { 
+            background-color: #f9fafb; 
+            color: #111827; 
+        }
+
+        pre {
+            background-color: #111827;
+            color: #e5e7eb;
+            padding: 15px;
+            font-size: 0.9em;
+            overflow-x: auto;
+            border-left: 4px solid #4b5563;
+        }
+
+        .img-xpath {
+            width: 60%;
+            display: block;
+            margin: 15px auto;
+            border: 1px solid #d1d5db;
+        }
+
+        .enlace {
+            margin-top: 50px;
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 30px;
+        }
+
+        .btn-pizarra {
+            display: inline-block;
+            background-color: #4b5563;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #6b7280;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>XPath: Navegación y Selección de Nodos</h1>
+        <p class="intro">
+            XPath es un lenguaje de expresiones utilizado para localizar y seleccionar nodos en un documento XML, tratándolo como una estructura jerárquica de árbol.
+        </p>
+    </header>
+
+    <main class="grid-layout">
+
+        <div class="caja-blanca">
+            <h3>1. El Modelo de Árbol</h3>
+            <p>XPath ve al XML como una familia de nodos. Contiene:</p>
+            <ul>
+                <li><strong>Nodo Raíz:</strong> El origen del documento (/).</li>
+                <li><strong>Elementos:</strong> Las etiquetas del XML.</li>
+                <li><strong>Atributos:</strong> Propiedades de las etiquetas (@).</li>
+                <li><strong>Nodos de Texto:</strong> El contenido real.</li>
+            </ul>
+        </div>
+
+        <div class="caja-blanca">
+            <h3>2. Operadores de Selección</h3>
+            <table>
+                <tr>
+                    <th>Sintaxis</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td><code>/</code></td>
+                    <td>Selección desde la raíz.</td>
+                </tr>
+                <tr>
+                    <td><code>//</code></td>
+                    <td>Selección en cualquier nivel.</td>
+                </tr>
+                <tr>
+                    <td><code>.</code></td>
+                    <td>Nodo actual.</td>
+                </tr>
+                <tr>
+                    <td><code>..</code></td>
+                    <td>Nodo padre.</td>
+                </tr>
+                <tr>
+                    <td><code>@</code></td>
+                    <td>Atributos.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="caja-blanca larga">
+            <h3>3. Ejemplos de Expresiones XPath</h3>
+            <p>Aplicando predicados y funciones para filtrar datos específicos:</p>
+            <pre>
+                1. Seleccionar todos los coches: //coche
+                2. El segundo coche de la lista: //coche[2]
+                3. Coches con matrícula específica: //coche[@matricula="8280KWT"]
+                4. Marca de coches cuyo combustible no sea el del último coche:
+                //coche[combustible != //coche[last()]/combustible]/marca
+            </pre>
+        </div>
+
+        <div class="caja-blanca larga">
+            <h3>4. Ejercicio: Configuración en VS Code</h3>
+            <p>El ejercicio propone verificar si nuestro editor detecta correctamente los formatos.json .csv y .yaml
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div style="flex: 1;">
+                    <strong>¿Cómo resolverlo?</strong>
+                    <ol>
+                        <li>Crea un archivo vacío con cada extensión.</li>
+                        <li>Observa si el icono cambia y si hay resaltado de sintaxis.</li>
+                        <li>Si no los detecta, instala extensiones como:
+                            <ul>
+                                <li><strong>YAML:</strong> de Red Hat.</li>
+                                <li><strong>Rainbow CSV:</strong> para archivos de datos.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <img src="../img/Captura de pantalla 2026-03-26 170810.png" alt="Captura de VSCode">
+            </div>
+        </div>
+
+    </main>
+
+    <div class="enlace">
+        <a href="../tema12.html" class="btn-pizarra">VOLVER AL RESUMEN</a>
+        <br>
+    </div>
+
+    <footer>
+        <p>Realizado por <strong>Antonio Javier García Corro</strong></p>
+        <p>Trabajo de clase - Lenguajes de Marcas - Unidad 12</p>
+    </footer>
+</body>
+</html>

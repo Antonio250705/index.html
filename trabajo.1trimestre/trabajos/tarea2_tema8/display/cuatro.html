@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Display</title>
+<style>
+    html{
+        height: 100%;
+    }
+    header{
+        text-align: center;
+        background-color: darkcyan;
+        box-shadow: 0 0 10px 1px;
+        border-radius: 15px;
+        padding: 1%;
+        background-size: auto;
+        margin: 10px;
+    }
+     h1{
+        color:black;
+        background-color:whitesmoke;
+        border-radius: 10px;
+        text-align: center;
+    }
+    nav{
+        background-color: aquamarine;
+        border-radius: 15px;
+        margin: 10px;
+        display: inline-block;
+    }
+    main{
+        background-color: antiquewhite;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 10px 1px;
+        margin: 10px;
+    }
+    ul{
+        text-align: justify;
+    }
+
+    p{
+        font-size:large;
+    }
+    .final{
+            background-color: aquamarine;
+            color: black;
+            width:fit-content;
+            width:33vw;
+            padding: 5px 10px;
+    }
+</style>
+</head>
+<body>
+   <header>
+        <h1>Display</h1>
+        <nav>
+            <p>Determina cómo se muestra un elemento en el diseño de una página web. Puede tomar varios valores,cada uno con un comportamiento.Aquí están los valores más comunes: </p>
+        </nav>
+    </header>
+    <main>
+        <ul>
+            <li><b>Block:</b><br>
+                <ul>
+            <li>Generan un nuevo bloque de formato, comenzando en una nueva linea</li>
+            <li>Ocupan todo el ancho disponible si no establece with</li>
+            <li>Se adaptan al alto del contenido si no se establece heigth</li>
+            <li>Ejemplos de bloque son: párrafos (p), encabezados (h1-h6), divisiones (div).</li>
+                </ul>
+            </li>
+            <br>
+
+            <li><b>Inline:</b><br>
+                <ul>
+            <li>No inician una nueva línea</li>
+            <li>Ocupan el ancho necesario para su contenido</li>
+            <li>No les afecta width o height</li>
+            <li>Ejemplos: enlaces (a) imágenes (img)  etiquetas de formato b , em , i , sup , span , li.
+                </ul>
+            </li>
+            <br>
+            <li><b>Inline-block:</b><br>
+                <ul>
+                    <li>Combina características de block e inline.</li>
+                </ul>
+            </li>
+            <br>
+            <li><b>None:</b><br>
+                <ul>
+                    <li>El elemento no se muestra en absoluto. Es como si el elemento no existiera en el diseño de la página. Esto puede ser útil para ocultar temporalmente elementos.</li>
+                </ul>
+            </li>
+            <br>
+            <li><b>Flex</b><br>
+            <ul>
+                <li>Introduce un modelo de diseño flexible y se utiliza para distribuir el espacio en el diseño entre los elementos hijos de un contenedor.</li>
+            </ul>
+            </li>
+        </ul>
+    </main> 
+    <h2 class="final"><a href="../index_tema8.html">Volver</a></h2>
+</body>
+</html>

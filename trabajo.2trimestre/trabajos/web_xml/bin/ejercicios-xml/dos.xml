@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda [
+  <!ELEMENT agenda (contacto+)>
+  <!ELEMENT contacto (nombre, apellidos, telefonos, direccion, email)>
+  <!ATTLIST contacto categoria (personal | profesional) "personal">
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT apellidos (#PCDATA)>
+  <!ELEMENT telefonos (fijo?, movil+)>
+  <!ELEMENT fijo (#PCDATA)>
+  <!ELEMENT movil (#PCDATA)>
+  <!ELEMENT direccion (calle, ciudad, cp)>
+  <!ELEMENT calle (#PCDATA)>
+  <!ELEMENT ciudad (#PCDATA)>
+  <!ELEMENT cp (#PCDATA)>
+  <!ELEMENT email (#PCDATA)>
+]>
+
+<agenda>
+    <contacto categoria="profesional">
+        <nombre>Juan</nombre>
+        <apellidos>Pérez Gómez</apellidos>
+        <telefonos>
+            <fijo>912345678</fijo>
+            <movil>600111222</movil>
+        </telefonos>
+        <direccion>
+            <calle>Paseo de la Castellana 100</calle>
+            <ciudad>Madrid</ciudad>
+            <cp>28046</cp>
+        </direccion>
+        <email>juan.perez@empresa.es</email>
+    </contacto>
+
+    <contacto categoria="personal">
+        <nombre>María</nombre>
+        <apellidos>López Iturbide</apellidos>
+        <telefonos>
+            <movil>655998877</movil>
+        </telefonos>
+        <direccion>
+            <calle>Calle Mayor 5, 2B</calle>
+            <ciudad>Córdoba</ciudad>
+            <cp>14002</cp>
+        </direccion>
+        <email>maria_lo@ejemplo.com</email>
+    </contacto>
+</agenda>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Evaluación de Dado</title>
+
+<style>
+    header, footer{
+        background-color: antiquewhite;
+        border: 5px solid ;
+        text-align: center;
+        padding: 10px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    main{
+        background-color:rgb(95, 124, 129);
+        border: 2px solid;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .contenedor{
+        height: 500px;
+        display: flex;
+        gap: 30px;
+        margin: 15px 0;
+        align-items: stretch; 
+    }
+
+    .dado{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        gap: 20px;
+    }
+
+    section{
+        background-color: rgb(247, 247, 247);
+        border: 10px solid rgb(104, 103, 103);
+        border-style:double;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .punto{
+        background-color: black;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    } 
+
+    .uno{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .dos{ 
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    .p-dos{
+        align-self: flex-start;
+        justify-content: right;
+    } 
+
+    .p-tres{
+        align-self: flex-end;
+        justify-content: left;
+    }
+
+    .p-cuatro{
+        align-self: flex-start;
+        justify-content: left;
+    }
+
+    .p-cinco{
+        align-items: flex-end;
+        justify-content: right;
+    }
+
+
+    .tres{ 
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cuatro{ 
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .cinco{ 
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .seis{ 
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .boton-volver {
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+    }
+
+    .boton-volver-contenedor {
+            margin: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+    }
+
+    </style>
+</head>
+<body>  
+    <header>
+        <h1>Dado</h1>
+    </header>
+
+    <div class="contenedor">
+
+        <main class="dado">
+
+            <section class="uno">
+                <div class="punto"></div>
+            </section>
+
+            <section class="cuatro">
+                <div class="punto "></div>
+                <div class="punto "></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+            </section>
+
+             <section class="dos">
+                <div class="punto + p-dos"></div>
+                <div class="punto + p-tres"></div>
+            </section>
+
+            <section class="cinco">
+                <div class="punto + p-dos"></div>
+                <div class="punto + p-cinco "></div>
+                <div class="punto + p-cuatro"></div>
+                <div class="punto + p-cinco"></div>
+                <div class="punto + p-tres"></div>
+            </section>
+
+             <section class="tres ">
+                <div class="punto + p-tres"></div>
+                <div class="punto"></div>
+                <div class="punto + p-dos"></div>
+            </section>
+
+            <section class="seis">
+                <div class="punto "></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+                <div class="punto"></div>
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <footer>
+        <p>Antonio Javier Garcia Corro</p>
+    </footer>
+
+    <div class="boton-volver-contenedor">
+            <a href="../../index.html" class="boton-volver"> Volver al index principal</a>
+    </div>
+
+
+</body>
+</html>

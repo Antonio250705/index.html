@@ -1,0 +1,54 @@
+    body {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .fila {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .casilla {
+        width: 100px;
+        height: 100px;
+    }
+
+    .casilla img {
+        width: 70px;
+        height: 70px;
+        padding: 15px;
+    }
+
+    .blanca {
+        background: #eeeed2;
+    }
+
+    .marron {
+        background: #b58863;
+    }
+
+    .centrar {
+        position: fixed;
+        left: 25%;
+    }
+
+    .boton-volver { /*requisito act boton abajo drcha*/
+        position: fixed;
+        top: 850px; /*boton abajp*/
+        left: 1300px; /*boton derecha*/
+        display: inline-flex;      
+        align-items: center;       
+        justify-content: center;
+        height: 40px;              
+        padding: 0 20px;           
+        border-radius: 20px;     
+        background-color: #1e293b;
+        color: white;
+    }
+    
+    .boton-volver a {
+        color: white;
+        text-decoration: none; 
+    }
+    

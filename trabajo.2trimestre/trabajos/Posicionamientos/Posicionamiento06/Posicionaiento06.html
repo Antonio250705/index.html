@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rafael García Sánchez">
+    <title>float</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header {
+            margin-bottom: 20px;
+            background-color: #13a099;
+            color: #f1f1f1;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10px;
+        }
+        #caja1 {
+            margin: 10px;
+            float: left;
+        }
+        #caja2 {
+            float: right;
+        }
+        #contenedor {
+            border: 5px solid #aaaaaa;
+            background-color: rgb(176, 181, 190);
+            margin: auto;
+            padding: 20px;
+            width: 50%;
+        
+        }
+        .pe {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+        .imagen {
+            position: relative;
+            width: 60%;
+            left: 20%;
+            z-index: -1;
+        }
+        .imagen>img {
+            width: 100%;
+        }
+        .castillo {
+            background-color: #002e4c4f;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+            font-size: 2em;
+            top: 50%;
+            left: 500px;
+            z-index: 2;
+        }
+        .rio {
+            background-color: #002e4c4f;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+            font-size: 2em;
+            top: 350px;
+            left: 900px;
+            z-index: 2;
+        }
+        .cielo {
+            background-color: #002e4c4f;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+            font-size: 2em;
+            top: 20px;
+            left: 200px;
+            z-index: 2;
+        }
+        .aldea {
+            background-color: #002e4c4f;
+            color: white;
+            border-radius: 20px;
+            padding: 20px;
+            position: absolute;
+            font-size: 2em;
+            top: 80%;
+            left: 100px;
+            z-index: 2;
+        }
+        img {
+            border-radius: 20px;
+        }
+        .boton-volver {
+            position: fixed;
+            top: 800px;
+            left: 800px;
+            display: inline-flex;      
+            align-items: center;       
+            justify-content: center;
+            height: 40px;              
+            padding: 0 20px;           
+            border-radius: 20px;     
+            background-color: #1e293b;
+            color: white;
+        }
+        .boton-volver a {
+            color: white;
+            text-decoration: none; 
+        }
+     
+    </style>
+</head>
+
+<body>
+    <header >
+        <h1>Position layout</h1>
+    </header>
+    <main>
+
+        <div id="rriba" class="imagen">
+            <img src="../Posicionamiento06/img/castillo.png" alt="Córdoba">
+            <p class="castillo">castillo</p>
+            <p class="rio">río</p>
+            <p class="cielo">cielo</p>
+            <p class="aldea">aldea</p>
+        </div>
+
+        <div id="contenedor">
+            <p>Al contemplar este castillo, es imposible no dejar volar la imaginación y visualizar caballeros en armadura, damas en vestidos elegantes y batallas legendarias. Cada rincón de sus muros, cada torre y cada pasadizo cuentan una historia, esperando ser descubierta por aquellos que se atreven a explorar sus secretos.
+<br>
+            Este castillo en la montaña, con el cielo, el río y el pueblo a sus pies, es un lugar mágico que nos transporta a otra época y nos invita a reflexionar sobre la historia, la naturaleza y la belleza de nuestro mundo.</p>
+<br>
+            <p>Al contemplar este castillo, es imposible no dejar volar la imaginación y visualizar caballeros en armadura, damas en vestidos elegantes y batallas legendarias. Cada rincón de sus muros, cada torre y cada pasadizo cuentan una historia, esperando ser descubierta por aquellos que se atreven a explorar sus secretos.
+        </div>
+
+    </main>
+
+      <h2 class="boton-volver"><a href="../posicionamientos.html">Volver a Posicionamientos</a></h2>
+</body>
+</body>
+
+</html>
