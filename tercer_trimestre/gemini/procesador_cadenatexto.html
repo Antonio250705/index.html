@@ -1,0 +1,20 @@
+<input type="text" id="textoEntrada" placeholder="Escribe algo aquí...">
+<button id="btnProcesar">Analizar Texto</button>
+<div id="resultadoTexto"></div>
+<a href="../gemini/index.repaso.html" class="boton-volver">Volver a Ejercicios de Repaso </a>
+
+<script>
+document.getElementById('btnProcesar').addEventListener('click', () => {
+    const texto = document.getElementById('textoEntrada').value;
+    const salida = document.getElementById('resultadoTexto');
+
+    // Aplicar métodos de cadenas del temario
+    salida.innerHTML = `
+        <p>Longitud: ${texto.length}</p>
+        <p>Mayúsculas: ${texto.toUpperCase()}</p>
+        <p>Minúsculas: ${texto.toLowerCase()}</p>
+        <p>Primer carácter: ${texto.charAt(0)}</p>
+        <p>Número de palabras: ${texto.trim().split(/\s+/).length}</p>
+    `;
+});
+</script>u

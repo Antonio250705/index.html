@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Deportes</title>
+    <style>
+
+        * { margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #55935e;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        main {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        .status-container {
+            width: 400px;
+            height: 180px;
+            border: 4px dashed #3498db;
+            border-radius: 15px;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+        #main-text {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .character-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #draggable-character {
+            width: 60px;
+            height: 60px;
+            cursor: grab;
+            transition: transform 0.1s;
+        }
+        .sports-container {
+            display: flex;
+            gap: 20px;
+        }
+        .sport-card {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: white;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .sport-card img {
+            max-width: 80%;
+            max-height: 80%;
+            pointer-events: none; 
+        }
+        .sport-card span {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .drop-hover {
+            border-color: #3498db;
+            background-color: #e3f2fd;
+        }
+        .glow-effect {
+            box-shadow: 0 0 15px #3498db;
+        }
+        footer {
+            background-color: #55935e;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            border-top: 1px solid #dcdde1;
+        }
+        .boton-volver {
+            margin-bottom: 50px;
+            margin-left: 400px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Zona de deportes</h1>
+    </header>
+
+    <main>
+        <div class="status-container status-area">
+            <p id="main-text">Vamos a jugar a...</p>
+            <div class="character-container">
+                <span id="draggable-character" draggable="true" role="img" aria-label="Athlete" style="font-size: 4rem;">🏃‍♂️</span>
+            </div>
+        </div>
+
+        <div class="sports-container">
+            <div class="sport-card" id="football-field" data-sport="Futbol">
+                <img src="../img/futbol.jfif" alt="Futbol">
+                <span>Futbol</span>
+            </div>
+            <div class="sport-card" id="basketball-court" data-sport="Baloncesto">
+                <img src="../img/baloncesto.jpg"Basketball">
+                <span>Baloncesto</span>
+            </div>
+            <div class="sport-card" id="volleyball-court" data-sport="Voleybol">
+                <img src="../img/voleibol.jfif"Voleybol">
+                <span>Voleybol</span>
+            </div>
+            <div class="sport-card" id="tennis-court" data-sport="Tenis">
+                <img src="../img/tenis.jfif" alt="Tenis">
+                <span>Tenis</span>
+            </div>
+        </div>
+    </main>
+
+     <a href="../../../trabajos/eventos/src/indexEventos.html" class="boton-volver">Volver a Eventos </a>
+
+    <footer>
+        <p>Realizado por <strong>Antonio Javier García Corro</strong></p>
+    </footer>
+
+    <script>
+        const character = document.getElementById('draggable-character');
+        const mainText = document.getElementById('main-text');
+        const sportCards = document.querySelectorAll('.sport-card');
+        const statusArea = document.querySelector('.status-area');
+        
+        let glowInterval;
+
+        // 1. Drag Start: Cuando el muñeco comienza a arrastrarse
+        character.addEventListener('dragstart', (e) => {
+            mainText.textContent = "Vamos a jugar a...";
+            e.dataTransfer.setData('characterId', e.target.id);
+            character.style.opacity = '0.5';
+        });
+
+        character.addEventListener('dragend', () => {
+            character.style.opacity = '1';
+        });
+
+        // 2. Eventos para cada tarjeta de deporte (Drop Zones)
+        sportCards.forEach(card => {
+            // Drag Over: Permite soltar y añade feedback visual
+            card.addEventListener('dragover', (e) => {
+                e.preventDefault(); // allow drop
+                card.classList.add('drop-hover');
+            });
+
+            // Drag Leave: Quita el feedback visual si sales
+            card.addEventListener('dragleave', () => {
+                card.classList.remove('drop-hover');
+            });
+
+            // Drop: Cuando sueltas el muñeco en el deporte
+            card.addEventListener('drop', (e) => {
+                e.preventDefault();
+                card.classList.remove('drop-hover');
+
+                // Actualizar el texto según el deporte (NOW YOU ARE PLAYING [SPORT]!)
+                const sportName = card.getAttribute('data-sport');
+                mainText.textContent = `Vamos a jugar a ${sportName}!`;
+
+                // Reposicionar el muñeco: lo movemos dentro de la tarjeta del deporte
+                card.appendChild(character);
+                character.style.fontSize = "2.5rem"; // lo hacemos un poco más pequeño para que quepa
+
+                // Implementar el efecto de brillo temporal usando setInterval (según el prompt)
+                if (glowInterval) clearInterval(glowInterval); // limpiar si hay uno previo
+                
+                let glowState = false;
+                glowInterval = setInterval(() => {
+                    glowState = !glowState;
+                    if (glowState) {
+                        card.classList.add('glow-effect');
+                    } else {
+                        card.classList.remove('glow-effect');
+                    }
+                }, 200); // parpadeo cada 200ms
+
+                // Usamos setTimeout para parar el parpadeo después de 2 segundos
+                setTimeout(() => {
+                    clearInterval(glowInterval);
+                    card.classList.remove('glow-effect');
+                }, 2000); // dura 2 segundos
+
+            });
+        });
+    </script>
+</body>
+</html>

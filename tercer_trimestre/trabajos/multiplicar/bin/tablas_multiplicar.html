@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Tabla de multiplicar</title>
+    <style>
+        /* Estilos muy básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            font-family: "Arial Black", sans-serif;
+            font-size: 28px;
+        }
+        .formulario {
+            margin-bottom: 20px;
+        }
+        button {
+            margin-top: 5px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        /* Estilos para que las tablas salgan en columnas */
+        .columna-tabla {
+            float: left; /* Esto pone una tabla al lado de la otra */
+            margin-right: 30px; /* Separación entre columnas */
+            margin-bottom: 20px;
+            font-family: monospace; /* Para que los números queden alineados rectos */
+            font-size: 16px;
+            line-height: 1.5; /* Espacio entre líneas */
+        }
+        /* Para limpiar los floats después de las tablas */
+        .limpiar {
+            clear: both;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Generador de tablas de multiplicar</h1>
+
+    <div class="formulario">
+        <label>Número de tablas de multiplicar a generar: </label>
+        <input type="number" id="numTablas" value="3">
+        <br>
+        <button onclick="generarTablas()">Calcular</button>
+    </div>
+
+    <div id="pantallaResultados"></div>
+
+    <script>
+        // Todo con 'var' y concatenación tradicional para que parezca de estudiante
+        function generarTablas() {
+            var inputNumero = document.getElementById("numTablas").value;
+            var cantidad = parseInt(inputNumero);
+            var resultados = document.getElementById("pantallaResultados");
+            
+            // Limpiamos la pantalla antes de empezar por si ya había tablas calculadas
+            resultados.innerHTML = "";
+
+            // Validación básica
+            if (isNaN(cantidad) || cantidad <= 0) {
+                resultados.innerHTML = "<p class='error'>Por favor, introduce un número mayor que 0.</p>";
+                return; // Cortamos la ejecución aquí
+            }
+
+            // Variable donde iremos acumulando todo el texto HTML
+            var textoHtml = "";
+
+            // BUCLE EXTERNO: Cuenta desde la tabla del 1 hasta el número introducido
+            for (var i = 1; i <= cantidad; i++) {
+                
+                // Abrimos el DIV de la columna
+                textoHtml = textoHtml + "<div class='columna-tabla'>";
+                
+                // BUCLE INTERNO: Multiplica el número actual (i) del 0 al 10
+                for (var j = 0; j <= 10; j++) {
+                    var resultadoMultiplicacion = i * j;
+                    
+                    // Concatenamos la línea (ejemplo: 1 X 0 = 0)
+                    textoHtml = textoHtml + i + " X " + j + " = " + resultadoMultiplicacion + "<br>";
+                }
+                
+                // Cerramos el DIV de la columna
+                textoHtml = textoHtml + "</div>";
+            }
+
+            // Añadimos un div limpiador al final para que no se rompa el diseño por los floats
+            textoHtml = textoHtml + "<div class='limpiar'></div>";
+
+            // Finalmente, metemos todo el bloque de texto en el HTML
+            resultados.innerHTML = textoHtml;
+        }
+    </script>
+</body>
+</html>

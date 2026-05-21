@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Cajas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .contenedor {
+            width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .titulo {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .columna {
+            width: 45%;
+            float: left;
+            margin-right: 2%;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        .limpiar {
+            clear: both;
+        }
+        input, select {
+            width: 90%;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            width: 95%;
+            border: none;
+            cursor: pointer;
+        }
+        .resultados-box {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border: 1px solid #b3e0ff;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+    <div class="titulo">
+        <h2>Presupuestos para cajas</h2>
+    </div>
+
+    <div class="columna">
+        <h3>Sección de Cálculo</h3>
+        <label>Ancho (cm):</label><br>
+        <input type="number" id="ancho" value="20"><br>
+        
+        <label>Alto (cm):</label><br>
+        <input type="number" id="alto" value="30"><br>
+        
+        <label>Largo (cm):</label><br>
+        <input type="number" id="largo" value="30"><br>
+
+        <label>Material:</label><br>
+        <select id="material">
+            <option value="Plastico">Plástico</option>
+            <option value="Carton">Cartón</option>
+            <option value="Madera">Madera</option>
+        </select><br><br>
+
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <div class="columna">
+        <h3>Sección de Configuración</h3>
+        <label>Precio base por m²:</label><br>
+        <input type="number" id="precioBase" value="1"><br>
+
+        <label>Incremento (%) para Plástico:</label><br>
+        <input type="number" id="incPlastico" value="20"><br>
+
+        <label>Incremento (%) para Cartón:</label><br>
+        <input type="number" id="incCarton" value="10"><br>
+
+        <label>Incremento (%) para Madera:</label><br>
+        <input type="number" id="incMadera" value="50"><br>
+
+        <label>IVA (%):</label><br>
+        <input type="number" id="iva" value="10"><br>
+    </div>
+
+    <div class="limpiar"></div>
+
+    <div class="resultados-box">
+        <h3>Sección de Resultados</h3>
+        <div id="pantallaResultados">
+            Los resultados aparecerán aquí.
+        </div>
+    </div>
+</div>
+
+<script>
+    // Usamos 'var' en lugar de 'let' o 'const' para que sea más clásico
+    function calcular() {
+        // 1. Obtener valores de la sección de cálculo
+        var ancho = parseFloat(document.getElementById("ancho").value);
+        var alto = parseFloat(document.getElementById("alto").value);
+        var largo = parseFloat(document.getElementById("largo").value);
+        var material = document.getElementById("material").value;
+
+        // 2. Obtener valores de la sección de configuración
+        var precioBase = parseFloat(document.getElementById("precioBase").value);
+        var incPlastico = parseFloat(document.getElementById("incPlastico").value);
+        var incCarton = parseFloat(document.getElementById("incCarton").value);
+        var incMadera = parseFloat(document.getElementById("incMadera").value);
+        var iva = parseFloat(document.getElementById("iva").value);
+
+        var cajaResultados = document.getElementById("pantallaResultados");
+
+        // 3. Validaciones básicas usando "if" normales
+        if (isNaN(ancho) || isNaN(alto) || isNaN(largo)) {
+            cajaResultados.innerHTML = "<p class='error'>Error: Faltan medidas.</p>";
+            return;
+        }
+
+        if (ancho < 5 || alto < 5 || largo < 5) {
+            cajaResultados.innerHTML = "<p class='error'>Error: Ninguna dimensión puede ser menor a 5 cm.</p>";
+            return;
+        }
+
+        if (ancho > 100 || alto > 100 || largo > 100) {
+            cajaResultados.innerHTML = "<p class='error'>Error: Ninguna dimensión puede ser mayor a 100 cm.</p>";
+            return;
+        }
+
+        // Encontrar el lado mayor y menor a la antigua (sin Math.max o Math.min)
+        var mayor = ancho;
+        if (alto > mayor) { mayor = alto; }
+        if (largo > mayor) { mayor = largo; }
+
+        var menor = ancho;
+        if (alto < menor) { menor = alto; }
+        if (largo < menor) { menor = largo; }
+
+        // Comprobar el factor de 5
+        if (mayor / menor > 5) {
+            cajaResultados.innerHTML = "<p class='error'>Error: Relación factor de 5 superada.</p>";
+            return;
+        }
+
+        // 4. Cálculos matemáticos
+        var volumen = ancho * alto * largo;
+        var superficieCm2 = 2 * ((ancho * alto) + (ancho * largo) + (alto * largo));
+        var superficieM2 = superficieCm2 / 10000;
+
+        var costoM2 = superficieM2 * precioBase;
+        
+        // Decidir qué porcentaje aplicar según el material
+        var porcentajeAplicar = 0;
+        if (material === "Plastico") {
+            porcentajeAplicar = incPlastico;
+        } else if (material === "Carton") {
+            porcentajeAplicar = incCarton;
+        } else if (material === "Madera") {
+            porcentajeAplicar = incMadera;
+        }
+
+        // Calcular precios
+        var precioSinIva = costoM2 + (costoM2 * (porcentajeAplicar / 100));
+        var cantidadIva = precioSinIva * (iva / 100);
+        var precioFinal = precioSinIva + cantidadIva;
+
+        // 5. Mostrar resultados concatenando texto con "+" a la antigua
+        var textoFinal = "";
+        textoFinal = textoFinal + "<p>Dimensiones de la caja: " + ancho + " x " + alto + " x " + largo + " cm</p>";
+        textoFinal = textoFinal + "<p>Volumen en cm³: " + volumen.toFixed(2) + "</p>";
+        textoFinal = textoFinal + "<p>Superficie en cm²: " + superficieCm2.toFixed(2) + "</p>";
+        textoFinal = textoFinal + "<p>Material seleccionado: " + material + "</p>";
+        textoFinal = textoFinal + "<p>Precio sin IVA: " + precioSinIva.toFixed(2) + "€</p>";
+        textoFinal = textoFinal + "<p>Precio con IVA: " + precioFinal.toFixed(2) + "€</p>";
+
+        cajaResultados.innerHTML = textoFinal;
+    }
+</script>
+</body>
+</html>

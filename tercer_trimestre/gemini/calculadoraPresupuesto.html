@@ -1,0 +1,46 @@
+
+
+<!-- Inputs para dimensiones y selección de material -->
+<input type="number" id="ancho" placeholder="Ancho (cm)">
+<input type="number" id="alto" placeholder="Alto (cm)">
+<input type="number" id="largo" placeholder="Largo (cm)">
+<select id="material">
+    <option value="1.2">Plástico (+20%)</option>
+    <option value="1.1">Cartón (+10%)</option>
+    <option value="1.5">Madera (+50%)</option>
+</select>
+<button id="btnCalcular">Calcular Presupuesto</button>
+<p id="resPresupuesto"></p>
+    
+<a href="../gemini/index.repaso.html" class="boton-volver">Volver a Ejercicios de Repaso </a>
+
+<script>
+document.getElementById('btnCalcular').addEventListener('click', () => {
+    // 1. Capturar y convertir valores
+    const a = Number(document.getElementById('ancho').value);
+    const h = Number(document.getElementById('alto').value);
+    const l = Number(document.getElementById('largo').value);
+    const multMaterial = Number(document.getElementById('material').value);
+
+    // 2. Validaciones de dimensiones según el temario
+    const dimensiones = [a, h, l];
+    const max = Math.max(...dimensiones);
+    const min = Math.min(...dimensiones);
+
+    if (min < 5 || max > 100) {
+        alert("Dimensiones deben estar entre 5 y 100 cm");
+        return;
+    }
+    if (max / min > 5) {
+        alert("La caja es desproporcionada (relación > 5)");
+        return;
+    }
+
+    // 3. Cálculo de superficie y precio (base 0.01€ por cm2)
+    const superficie = 2 * (a * h + a * l + h * l);
+    let precioBase = superficie * 0.01;
+    let precioFinal = precioBase * multMaterial;
+
+    document.getElementById('resPresupuesto').innerText = `Total: ${precioFinal.toFixed(2)}€ (IVA no incl.)`;
+});
+</script>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos clásicos imitando el diseño de tu imagen */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .cabecera {
+            background-color: #0088cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+        }
+        .tarjeta {
+            background-color: white;
+            width: 600px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+        .seccion {
+            border: 1px solid #0088cc;
+            background-color: #e6f7ff;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .titulo-seccion {
+            color: #005580;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #006699;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0088cc;
+        }
+        #pantalla-resultados {
+            font-weight: bold;
+            color: #005580;
+            margin-top: 20px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cabecera">
+        Ejercicios JavaScript
+    </div>
+
+    <div class="tarjeta">
+        
+        <div class="titulo-seccion">Demostración de stopPropagation()</div>
+        
+        <div class="seccion" id="cajaPadre">
+            <p><strong>Padre</strong></p>
+            <button id="btnHijo1">Hijo 1 (con stopPropagation)</button>
+            <br>
+            <button id="btnHijo2">Hijo 2 (sin stopPropagation)</button>
+        </div>
+
+        <hr>
+
+        <div class="titulo-seccion">Demostración de preventDefault()</div>
+        
+        <div>
+            <button id="btnActivarDesactivar">Desactivar Enlace</button>
+            <br>
+            <a href="https://www.w3schools.com" id="miEnlace" target="_blank">Ir a W3Schools</a>
+        </div>
+
+        <hr>
+
+        <div id="pantalla-resultados">
+            Aquí saldrán los resultados...
+        </div>
+
+    </div>
+
+    <script>
+        // === VARIABLES GLOBALES ===
+        var cajaPadre = document.getElementById("cajaPadre");
+        var btnHijo1 = document.getElementById("btnHijo1");
+        var btnHijo2 = document.getElementById("btnHijo2");
+        
+        var btnActivarDesactivar = document.getElementById("btnActivarDesactivar");
+        var miEnlace = document.getElementById("miEnlace");
+        var pantalla = document.getElementById("pantalla-resultados");
+
+        var enlaceActivo = true; // Variable para saber si el enlace funciona o no
+
+        // === 1. EJERCICIO STOPPROPAGATION ===
+
+        // Evento para el Padre
+        cajaPadre.addEventListener("click", function() {
+            var mensaje = " — clic en PADRE";
+            console.log(mensaje);
+            // Sumamos el texto al que ya haya en pantalla para que se vea la propagación
+            pantalla.innerHTML = pantalla.innerHTML + mensaje; 
+        });
+
+        // Evento para el Hijo 1 (CON stopPropagation)
+        btnHijo1.addEventListener("click", function(evento) {
+            evento.stopPropagation(); // ESTO EVITA QUE LLEGUE AL PADRE
+            
+            var mensaje = "clic en HIJO 1 (con stopPropagation)";
+            console.log(mensaje);
+            pantalla.innerHTML = mensaje; // Sobrescribimos la pantalla
+        });
+
+        // Evento para el Hijo 2 (SIN stopPropagation)
+        btnHijo2.addEventListener("click", function() {
+            // Como no tiene stopPropagation, después de esto se ejecutará el clic del Padre
+            var mensaje = "clic en HIJO 2 (sin stopPropagation)";
+            console.log(mensaje);
+            pantalla.innerHTML = mensaje; // Sobrescribimos la pantalla
+        });
+
+
+        // === 2. EJERCICIO PREVENTDEFAULT ===
+
+        // Evento para el botón que activa/desactiva
+        btnActivarDesactivar.addEventListener("click", function() {
+            if (enlaceActivo == true) {
+                enlaceActivo = false;
+                btnActivarDesactivar.innerHTML = "Activar Enlace";
+                pantalla.innerHTML = "El enlace ha sido DESACTIVADO.";
+            } else {
+                enlaceActivo = true;
+                btnActivarDesactivar.innerHTML = "Desactivar Enlace";
+                pantalla.innerHTML = "El enlace ha sido ACTIVADO.";
+            }
+        });
+
+        // Evento para el Enlace
+        miEnlace.addEventListener("click", function(evento) {
+            if (enlaceActivo == false) {
+                // Si el enlace está desactivado, cancelamos su comportamiento natural (navegar)
+                evento.preventDefault(); 
+                
+                var mensaje = "Acción bloqueada: preventDefault() ejecutado.";
+                console.log(mensaje);
+                pantalla.innerHTML = mensaje;
+            } else {
+                var mensaje = "Navegando a W3Schools...";
+                console.log(mensaje);
+                pantalla.innerHTML = mensaje;
+            }
+        });
+
+    </script>
+</body>
+</html>

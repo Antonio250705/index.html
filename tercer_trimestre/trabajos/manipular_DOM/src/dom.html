@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Ejercicios de Eventos</title>
+<style>
+/* Mantenemos tu base de estilos para que la estética sea idéntica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-primary: #198fd8; 
+    --color-bg: #f4f7f6;
+    --color-text: #333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--color-text);
+}
+
+header, footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: auto; 
+    font-size: 0.9rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Contenedor ajustado para 2 columnas como en tu foto */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.card {
+    background-color: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+}
+
+.boton-volver {
+    margin-top: 20px;
+    display: inline-block;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Ejercicios de DOM</h1>
+    </header>
+
+    <main style="flex-direction: column;">
+        <div class="card-container">
+            
+            <div class="card">
+                <a href="./dom1.html">Ejercicio 1</a>
+            </div>
+
+            <div class="card">
+                <a href="./dom2.html">Ejercicio 2</a>
+            </div>
+
+        </div>
+
+        <a href="../../../index3.html" class="boton-volver">Volver al index </a>
+    </main>
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+</body>
+</html>

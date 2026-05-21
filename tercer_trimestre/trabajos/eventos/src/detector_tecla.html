@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Detector de teclado</title>
+    <style>
+        * {
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #e7e7e7;
+        }
+        header {
+            background-color: #55935e;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        main {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .dotted-box {
+            width: 180px;
+            height: 180px;
+            border: 4px dashed #3498db;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 6rem;
+            color: #3498db;
+            background-color: white;
+            transition: all 0.2s ease;
+        }
+        footer {
+            background-color: #55935e;
+            color: #ffffff;
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            border-top: 1px solid #dcdde1;
+        }
+        .boton-volver {
+            margin-bottom: 50px;
+            margin-left: 400px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>DETECTOR DE TECLADO</h1>
+    </header>
+
+    <main>
+        <div id="display-box" class="dotted-box"></div>
+        <p style="margin-top: 20px; color: #95a5a6;">Presiona una tecla</p>
+    </main>
+
+    <a href="../../../trabajos/eventos/src/indexEventos.html" class="boton-volver">Volver a Eventos </a>
+
+    <footer>
+        <p>Realizado por <strong>Antonio Javier García Corro</strong></p>
+    </footer>
+
+    <script>
+        const displayBox = document.getElementById('display-box');
+
+        window.addEventListener('keydown', (e) => {
+            const key = e.key.toUpperCase();
+            if (key.length === 1 && key.match(/[A-Z]/)) {
+                displayBox.textContent = key;
+                displayBox.style.transform = "scale(1.1)";
+                displayBox.style.borderColor = "#2ecc71";
+            }
+        });
+
+        window.addEventListener('keyup', () => {
+            displayBox.textContent = '';
+            displayBox.style.transform = "scale(1)";
+            displayBox.style.borderColor = "#3498db";
+        });
+    </script>
+</body>
+</html>

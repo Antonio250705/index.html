@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Demostración - Eventos</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #55935e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.caja-ejercicio {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.seccion h4 {
+    color: #006eb0;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.separador {
+    height: 1px;
+    background: #e0e0e0;
+    margin: 25px 0;
+}
+
+#padre {
+    background-color: #e1f5fe;
+    border: 2px solid #0084d1;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.label-padre {
+    font-weight: bold;
+    color: #006eb0;
+    margin-bottom: 12px;
+}
+
+#padre button {
+    display: block;
+    width: 75%;
+    margin: 8px auto;
+    padding: 8px;
+    background-color: #0084d1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#padre button:hover {
+    background-color: #006bb0;
+}
+
+#boton-toggle {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+#enlace {
+    color: #0084d1;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.95rem;
+}
+
+.consola-pantalla {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+#output {
+    font-size: 0.95rem;
+    color: #004d80;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #55935e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+ .boton-volver {
+    margin-bottom: 50px;
+    margin-left: 400px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+    </style>
+
+</head>
+<body>
+    
+   <header>
+        <h1><b>StopPropagation() y PreventDefault()</b></h1>
+    </header>
+
+    <main>
+        <div class="caja-ejercicio">
+            
+            <div class="seccion">
+                <h4>Demostración de <code>stopPropagation()</code></h4>
+                <div id="padre">
+                    <p class="label-padre">Padre</p>
+                    <button id="hijo1">Hijo 1 (con stopPropagation)</button>
+                    <button id="hijo2">Hijo 2 (sin stopPropagation)</button>
+                </div>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="seccion">
+                <h4>Demostración de <code>preventDefault()</code></h4>
+                <button id="boton-toggle">Desactivar/desactivar Enlace</button>
+                <br><br>
+                <a href="https://www.w3schools.com" id="enlace" target="_blank">Ir a W3Schools</a>
+            </div>
+
+            <div class="separador"></div>
+
+            <div class="consola-pantalla">
+                <p id="output">Los clics e información aparecerán aquí...</p>
+            </div>
+            
+        </div>
+    </main>
+
+    <a href="../../eventos/src/indexEventos.html" class="boton-volver">Volver a Index </a>
+
+    <footer>
+        <p>Antonio Javier García Corro</b></p>
+    </footer>
+
+ 
+</body>
+</html>
+<script>
+    const output = document.getElementById('output');
+    const btnToggle = document.getElementById('btn-toggle');
+    let enlaceBloqueado = false; 
+
+    function mostrar(msg) {
+        console.log(msg);
+        output.textContent = msg;
+    }
+
+    document.getElementById('padre').addEventListener('click', () => {
+        mostrar("clic en PADRE");
+    });
+
+    document.getElementById('hijo1').addEventListener('click', (e) => {
+        e.stopPropagation(); // Frena el evento aquí
+        mostrar("clic en HIJO 1 (con stopPropagation)");
+    });
+
+    document.getElementById('hijo2').addEventListener('click', () => {
+        mostrar("clic en HIJO 2 (sin stopPropagation) ➔ clic en PADRE");
+    });
+
+    btnToggle.style.backgroundColor = "#0084d1";
+    btnToggle.style.color = "white";
+
+    btnToggle.addEventListener('click', () => {
+        enlaceBloqueado = !enlaceBloqueado; 
+        
+        if (enlaceBloqueado) {
+            btnToggle.style.backgroundColor = "#dc3545"; 
+            mostrar("Enlace bloqueado con preventDefault()");
+        } else {
+            btnToggle.style.backgroundColor = "#0084d1"; 
+            mostrar("Enlace listo para navegar");
+        }
+    });
+
+    document.getElementById('enlace').addEventListener('click', (e) => {
+        if (enlaceBloqueado) {
+            e.preventDefault(); 
+            mostrar("Acción cancelada con preventDefault()");
+        } else {
+            mostrar("Abriendo W3Schools...");
+        }
+    });
+</script>

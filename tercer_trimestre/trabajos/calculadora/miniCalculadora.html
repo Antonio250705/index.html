@@ -1,0 +1,45 @@
+<body>
+    <!-- 1. Estructura HTML: Definimos las entradas de datos y el botón -->
+    <label>Primer número: <input type="number" id="numero1"></label><br>
+    <label>Segundo número: <input type="number" id="numero2"></label><br>
+    
+    <!-- El atributo onclick vincula el clic del ratón con la función de JS -->
+    <button onclick="calcular()">Calcular</button><br>
+
+    <!-- 2. Contenedores de resultados: Usamos <span> con ID para poder escribir en ellos después -->
+    <div>La suma es: <span id="suma"></span></div>
+    <div>El producto es: <span id="producto"></span></div>
+    <div>El número mayor es: <span id="mayor"></span></div>
+    <a href="../../index3.html" class="boton-volver">Volver a Index </a>
+
+    <script>
+        function calcular() {
+            // 3. Captura de datos:
+            // Obtenemos el valor del input y lo convertimos a número con Number() 
+            // (Si no se convierte, JS los trataría como texto/strings)
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+
+            // 4. Procesamiento: Operaciones matemáticas simples
+            const suma = numero1 + numero2;
+            const producto = numero1 * numero2;
+
+            // 5. Lógica de control: Comparamos los números para ver cuál es mayor
+            let mayor;
+            if (numero1 > numero2) {
+                mayor = numero1;
+            } else if (numero2 > numero1) {
+                mayor = numero2;
+            } else {
+                // Caso en que ambos sean el mismo número
+                mayor = "Los números son iguales";
+            }
+
+            // 6. Salida de datos:
+            // "Pintamos" los resultados en los elementos <span> que definimos arriba
+            document.getElementById("suma").textContent = suma;
+            document.getElementById("producto").textContent = producto;
+            document.getElementById("mayor").textContent = mayor;
+        }
+    </script>
+</body>

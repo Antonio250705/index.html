@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4; 
+}
+
+.calculadora {
+  width: 320px;
+  background: linear-gradient(to bottom, #cfcfcf, #a6a6a6); 
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+
+.pantalla {
+  margin-bottom: 15px;
+}
+
+#resultado {
+  width: 100%;
+  height: 70px;
+  font-size: 35px;
+  text-align: right;
+  padding: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  background-color: #a3c0a6; 
+  color: #000;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+button {
+  height: 45px;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #f0f0f0, #c0c0c0);
+  border: 1px solid #888;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background 0.1s, transform 0.1s;
+}
+
+button:active {
+  background: #bbb;
+  transform: translateY(2px);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.doble {
+  grid-column: span 2;
+}
+.boton-volver {
+  margin-bottom: 50px;
+  margin-left: 400px;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+}

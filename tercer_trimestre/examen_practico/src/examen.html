@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Examen practico</title>
+    <style>
+        /* Mantenemos tu estructura base para que coincida con el resto de la web */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #5eb8f0; 
+            /* He dejado el color de fondo marrón/grisáceo que tenías en tu body original */
+            --color-bg: rgb(190, 188, 186); 
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--color-bg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabecera y pie de página de tu proyecto */
+        header, footer {
+            background-color: var(--color-primary);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        footer {
+            margin-top: auto; 
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 40px 20px;
+        }
+
+        /* Tu diseño exacto para la caja gris del examen */
+        .diseño {
+            background: linear-gradient(to bottom, #cfcfcf, #a6a6a6); 
+            border: 2px solid #555;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+            display: inline-flex; /* Para que se pongan uno al lado del otro */
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .diseño input {
+            padding: 5px;
+            width: 100px;
+        }
+
+        .diseño button {
+            padding: 5px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        /* Estilos para que los resultados se vean bien */
+        .resultados p {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .resultados span {
+            font-weight: normal;
+            color: #333;
+        }
+
+        .error {
+            color: darkred;
+            font-weight: bold;
+        }
+        .boton-volver {
+            margin-bottom: 50px;
+            margin-left: 400px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>Ejemplo de examen</h1>
+    </header>
+
+    <main>
+        <div class="diseño">
+            <input type="number" id="NumeroA">
+            <input type="number" id="NumeroB">
+            <input type="number" id="NumeroC">
+            <button onclick="calcular()">Calcular</button>
+        </div>
+
+        <div class="resultados">
+            <p>Numero mayor: <span id="resMayor"></span></p>
+            <p>Numero menor: <span id="resMenor"></span></p>
+            <p>Numero ordenado de menor a mayor: <span id="resOrden"></span></p>
+        </div>
+    </main>
+    <a href="./examenes.html" class="boton-volver">Volver a exámenes </a>
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+
+    <script>
+        function calcular() {
+            // 1. Obtenemos los valores y los forzamos a ser números (Number o parseFloat)
+            // AQUÍ ESTABA EL ERROR 2: Has puesto el ID correcto para cada uno
+            var numA = Number(document.getElementById("NumeroA").value);
+            var numB = Number(document.getElementById("NumeroB").value);
+            var numC = Number(document.getElementById("NumeroC").value);
+
+            // Capturamos las "cajas" donde vamos a pintar el resultado
+            var spanMayor = document.getElementById("resMayor");
+            var spanMenor = document.getElementById("resMenor");
+            var spanOrden = document.getElementById("resOrden");
+
+            // 2. Validación: Comprobamos si el usuario ha dejado algún hueco en blanco
+            // isNaN significa "Is Not a Number" (Si no es un número)
+            if (isNaN(numA) || isNaN(numB) || isNaN(numC) || document.getElementById("NumeroA").value === "") {
+                spanMayor.innerHTML = "<span class='error'>Error: Rellena los 3 huecos.</span>";
+                spanMenor.innerText = "";
+                spanOrden.innerText = "";
+                return; // Cortamos el código aquí para que no siga calculando
+            }
+
+            // 3. Sacar Mayor y Menor usando las funciones predefinidas de JS
+            var mayor = Math.max(numA, numB, numC);
+            var menor = Math.min(numA, numB, numC);
+
+            // 4. Ordenar los números
+            // Metemos los tres números en un array (una lista)
+            var arrayNumeros = [numA, numB, numC];
+            
+            // Usamos la función sort() para ordenarlos numéricamente de menor a mayor
+            arrayNumeros.sort(function(a, b) {
+                return a - b; 
+            });
+
+            // Convertimos el array en un texto separado por comas
+            var numerosOrdenados = arrayNumeros.join(" , ");
+
+            // 5. Imprimimos los resultados en el HTML (dentro de los <span>)
+            spanMayor.innerText = mayor;
+            spanMenor.innerText = menor;
+            spanOrden.innerText = numerosOrdenados;
+        }
+    </script>
+</body>
+</html>

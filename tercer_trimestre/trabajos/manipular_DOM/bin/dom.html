@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ESTILOS CLÁSICOS GENERALES */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h2 { color: #005580; }
+        .contenedor {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+        }
+        .cabecera-azul {
+            background-color: #0088cc;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* --- ESTILOS EJERCICIO 1 --- */
+        #resultado-conteo {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .caja-prueba {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 80px;
+            height: 20px;
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .limpiar { clear: both; }
+
+        /* --- ESTILOS EJERCICIO 2 --- */
+        .botones-zona button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        /* La tarjeta original */
+        .card {
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 200px;
+            height: 150px;
+            margin: 30px auto;
+            text-align: center;
+            line-height: 150px; /* Centra el texto verticalmente */
+            font-weight: bold;
+            color: #005580;
+            transition: all 0.3s; /* Animación suave clásica */
+        }
+
+        /* CLASES CSS QUE SE AÑADIRÁN/QUITARÁN CON JAVASCRIPT */
+        .fondo-nuevo { background-color: #b3e6ff !important; }
+        .borde-punteado { border: 3px dashed #0088cc !important; }
+        .borde-redondeado { border-radius: 30px !important; }
+        .oculto { display: none !important; }
+        .tamano-grande { 
+            width: 300px !important; 
+            height: 200px !important; 
+            line-height: 200px !important;
+        }
+        .tamano-chico { 
+            width: 100px !important; 
+            height: 80px !important; 
+            line-height: 80px !important;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor" id="zona-ejercicio-1">
+        <div class="cabecera-azul">Contar DIVs en la Página</div>
+        
+        <div id="resultado-conteo">
+            <strong>Resultado:</strong><br><br>
+            Calculando...
+        </div>
+
+        <div class="caja-prueba">Hola</div>
+        <div class="caja-prueba"></div>
+        <div class="caja-prueba">   </div> <div class="limpiar"></div>
+    </div>
+
+
+    <div class="contenedor">
+        <div class="cabecera-azul">Modificar Clases del DOM</div>
+        
+        <div class="botones-zona" style="text-align: center;">
+            <button onclick="alternarFondo()">Color Fondo</button>
+            <button onclick="alternarBordePunteado()">Bordes Punteados</button>
+            <button onclick="alternarBordeRedondo()">Bordes Redondeados</button>
+            <button onclick="mostrarTarjeta()">Aparecer</button>
+            <button onclick="ocultarTarjeta()">Desaparecer</button>
+            <button onclick="hacerGrande()">Tamaño Grande</button>
+            <button onclick="hacerChico()">Tamaño Chico</button>
+        </div>
+
+        <div id="miTarjeta" class="card">Modifica la tarjeta</div>
+    </div>
+
+
+    <script>
+        // --- CÓDIGO DEL EJERCICIO 1 ---
+        // Envolvemos el código en una función que se ejecuta sola para ser ordenados
+        function contarDivs() {
+            // Seleccionamos SOLO los divs dentro de la zona 1 para no contar los de la zona 2
+            var zona1 = document.getElementById("zona-ejercicio-1");
+            var todosLosDivs = zona1.querySelectorAll("div"); 
+            
+            var total = 0;
+            var conContenido = 0;
+            var vacios = 0;
+
+            // El enunciado pide usar forEach()
+            todosLosDivs.forEach(function(elementoDiv) {
+                total = total + 1; // Contamos todos
+
+                // .trim() quita los espacios en blanco. Si se queda en nada (""), está vacío.
+                if (elementoDiv.innerHTML.trim() === "") {
+                    vacios = vacios + 1;
+                } else {
+                    conContenido = conContenido + 1;
+                }
+            });
+
+            // Mostramos los resultados usando innerHTML como pide el enunciado
+            var cajaResultado = document.getElementById("resultado-conteo");
+            cajaResultado.innerHTML = "<strong>Resultado:</strong><br><br>" +
+                                      "Total de &lt;div&gt;: " + total + "<br><br>" +
+                                      "Con contenido: " + conContenido + "<br><br>" +
+                                      "Vacíos: " + vacios;
+        }
+
+        // Ejecutamos la función de contar nada más cargar la página
+        contarDivs();
+
+
+        // --- CÓDIGO DEL EJERCICIO 2 ---
+        var tarjeta = document.getElementById("miTarjeta");
+
+        // Usamos toggle (alternar) porque si le das una vez se pone, y si le das otra se quita
+        function alternarFondo() {
+            tarjeta.classList.toggle("fondo-nuevo");
+        }
+
+        function alternarBordePunteado() {
+            tarjeta.classList.toggle("borde-punteado");
+        }
+
+        function alternarBordeRedondo() {
+            tarjeta.classList.toggle("borde-redondeado");
+        }
+
+        // Para aparecer y desaparecer usamos add (añadir clase) y remove (quitar clase)
+        function ocultarTarjeta() {
+            tarjeta.classList.add("oculto");
+        }
+
+        function mostrarTarjeta() {
+            tarjeta.classList.remove("oculto");
+        }
+
+        // Para los tamaños, hay que quitar un tamaño antes de poner el otro
+        function hacerGrande() {
+            tarjeta.classList.remove("tamano-chico");
+            tarjeta.classList.add("tamano-grande");
+        }
+
+        function hacerChico() {
+            tarjeta.classList.remove("tamano-grande");
+            tarjeta.classList.add("tamano-chico");
+        }
+    </script>
+</body>
+</html>

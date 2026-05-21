@@ -1,0 +1,27 @@
+<!-- Estructura básica: Input para el número y un contenedor para el resultado -->
+<input type="number" id="numTablas" placeholder="¿Cuántas tablas?">
+<button id="btnGenerar">Generar</button>
+<div id="contenedorTablas"></div>
+<a href="../gemini/index.repaso.html" class="boton-volver">Volver a Ejercicios de Repaso </a>
+
+<script>
+document.getElementById('btnGenerar').addEventListener('click', () => {
+    // 1. Obtener el valor y limpiar el contenedor previo
+    const n = parseInt(document.getElementById('numTablas').value);
+    const contenedor = document.getElementById('contenedorTablas');
+    contenedor.innerHTML = ""; 
+
+    // 2. Bucle para generar cada tabla
+    for (let i = 1; i <= n; i++) {
+        let tablaHtml = `<h3>Tabla del ${i}</h3><ul>`;
+        
+        // Bucle interno para las multiplicaciones del 0 al 10
+        for (let j = 0; j <= 10; j++) {
+            tablaHtml += `<li>${i} x ${j} = ${i * j}</li>`;
+        }
+        
+        tablaHtml += "</ul>";
+        contenedor.innerHTML += tablaHtml; // Insertar en el DOM
+    }
+});
+</script>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Modificar Clases del DOM</title>
+
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: #55935e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.caja-ejercicio {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 850px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.header-interna {
+    background-color: #0084d1;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.boton {
+    background-color: #f1f3f5;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.boton button {
+    background-color: #0084d1;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.boton button:hover {
+    background-color: #006bb0;
+}
+
+.zona-interactiva {
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fafafa;
+    padding: 20px;
+}
+
+.tarjeta-base {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #006eb0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    transition: all 0.3s ease; 
+}
+
+.cambio-color {
+    background-color: #b3e5fc !important;
+}
+
+.borde-punteado {
+    border: 3px dashed #0084d1 !important;
+}
+
+.borde-redondeado {
+    border-radius: 24px !important;
+}
+
+.ocultar {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none; 
+}
+
+.grande {
+    width: 280px;
+    height: 280px;
+}
+
+.chico {
+    width: 130px;
+    height: 130px;
+}
+
+.boton-volver {
+    margin-bottom: 50px;
+    margin-left: 400px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+    </style>
+
+</head>
+<body>
+    
+   <header>
+        <h1><b>Modificar Clases del DOM</b></h1>
+    </header>
+
+    <main>
+        <div class="caja-ejercicio">
+            <div class="header-interna">Modificar Clases del DOM</div>
+            
+            <div class="boton">
+                <button onclick="alternarColor()">Color Fondo</button>
+                <button onclick="alternarBordesPunteados()">Bordes Punteados</button>
+                <button onclick="alternarBordesRedondeados()">Bordes Redondeados</button>
+                <button onclick="aparecerTarjeta()">Aparecer</button>
+                <button onclick="desaparecerTarjeta()">Desaparecer</button>
+                <button onclick="hacerGrande()">Tamaño Grande</button>
+                <button onclick="hacerChico()">Tamaño Chico</button>
+            </div>
+
+            <div class="zona-interactiva">
+                <div id="tarjeta-objeto" class="tarjeta-base">
+                    Modifica la tarjeta
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <a href="../../../trabajos/manipular_DOM/src/dom.html" class="boton-volver">Volver a Ejercicios DOM </a>
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+
+</body>
+</html>
+
+<script>
+    const tarjeta = document.getElementById('tarjeta-objeto');
+
+    function alternarColor() {
+        tarjeta.classList.toggle('cambio-color');
+    }
+
+    function alternarBordesPunteados() {
+        tarjeta.classList.toggle('borde-punteado');
+    }
+
+    function alternarBordesRedondeados() {
+        tarjeta.classList.toggle('borde-redondeado');
+    }
+
+    function desaparecerTarjeta() {
+        tarjeta.classList.add('ocultar');
+    }
+
+    function aparecerTarjeta() {
+        tarjeta.classList.remove('ocultar');
+    }
+
+    function hacerGrande() {
+        tarjeta.classList.remove('chico');
+        tarjeta.classList.add('grande');
+    }
+
+    function hacerChico() {
+        tarjeta.classList.remove('grande');
+        tarjeta.classList.add('chico');
+    }
+</script>

@@ -1,0 +1,33 @@
+<input type="text" id="nombreProd" placeholder="Producto">
+<input type="number" id="precioProd" placeholder="Precio">
+<button id="btnAñadir">Añadir a la lista</button>
+<ul id="listaVenta"></ul>
+<p>Total Acumulado: <span id="totalVenta">0</span>€</p>
+
+<a href="../gemini/index.repaso.html" class="boton-volver">Volver a Ejercicios de Repaso </a>
+
+<script>
+let totalGlobal = 0; // Variable para mantener el estado del total
+
+document.getElementById('btnAñadir').addEventListener('click', () => {
+    const nombre = document.getElementById('nombreProd').value;
+    const precio = Number(document.getElementById('precioProd').value);
+
+    if (nombre && precio > 0) {
+        // 1. Crear el nuevo elemento de lista
+        const li = document.createElement('li');
+        li.textContent = `${nombre}: ${precio}€`;
+        
+        // 2. Añadirlo al contenedor
+        document.getElementById('listaVenta').appendChild(li);
+
+        // 3. Actualizar el total
+        totalGlobal += precio;
+        document.getElementById('totalVenta').innerText = totalGlobal.toFixed(2);
+        
+        // Limpiar inputs
+        document.getElementById('nombreProd').value = "";
+        document.getElementById('precioProd').value = "";
+    }
+});
+</script>

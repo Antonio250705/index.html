@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Monitor de Eventos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        .contenedor {
+            width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        .cabecera {
+            background-color: #55935e;
+            color: white;
+            padding: 10px;
+        }
+        .columna-izq {
+            width: 60%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .columna-der {
+            width: 40%;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #e6f7ff;
+            height: 400px;
+        }
+        .limpiar-floats {
+            clear: both;
+        }
+        
+        /* Zona de interacción y círculo */
+        #zonaInteraccion {
+            border: 2px dashed #007acc;
+            height: 250px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 10px;
+            background-color: white;
+        }
+        #textoZona {
+            color: #007acc;
+            margin-top: 100px;
+            display: inline-block;
+        }
+        #circulo {
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -30px; /* Para centrarlo a la antigua */
+            cursor: pointer;
+        }
+        
+        /* Botón y Registro */
+        #btnLimpiar {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        #registro {
+            height: 330px;
+            overflow-y: scroll; /* Añade barra de desplazamiento */
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .mensaje {
+            margin-bottom: 5px;
+        }
+        .boton-volver {
+            margin-bottom: 70px;
+            margin-left: 400px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        footer {
+            background-color: #55935e;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+    <div class="cabecera">
+        <h2>Monitor de Eventos</h2>
+    </div>
+
+    <div class="columna-izq">
+        <div id="zonaInteraccion">
+            <span id="textoZona">Interactúa aquí</span>
+            <div id="circulo" draggable="true"></div>
+        </div>
+        <button id="btnLimpiar">Limpiar Historial</button>
+    </div>
+
+    <div class="columna-der">
+        <b>Registro:</b>
+        <div id="registro"></div>
+    </div>
+
+    <div class="limpiar-floats"></div>
+</div>
+
+<a href="../../../trabajos/eventos/src/indexEventos.html" class="boton-volver">Volver a Eventos </a>
+  <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+<script>
+    // window.onload asegura que el código se ejecute cuando cargue todo el HTML
+    window.onload = function() {
+        
+        var zona = document.getElementById("zonaInteraccion");
+        var circulo = document.getElementById("circulo");
+        var historial = document.getElementById("registro");
+        var btnLimpiar = document.getElementById("btnLimpiar");
+
+        // Variable bandera para saber dónde soltamos el círculo
+        var soltadoDentro = false;
+
+        // Función para obtener la hora actual en formato [HH:MM:SS]
+        function obtenerHora() {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
+
+            // Añadir un 0 delante si es menor de 10 (ej: 09 en vez de 9)
+            if (horas < 10) { horas = "0" + horas; }
+            if (minutos < 10) { minutos = "0" + minutos; }
+            if (segundos < 10) { segundos = "0" + segundos; }
+
+            return "[" + horas + ":" + minutos + ":" + segundos + "]";
+        }
+
+        // Función central para añadir mensajes al historial
+        function agregarMensaje(texto, color, icono) {
+            var hora = obtenerHora();
+            // Creamos el div de texto con estilo en línea a la antigua
+            var nuevoMensaje = "<div class='mensaje' style='color: " + color + ";'>" + icono + " " + hora + " " + texto + "</div>";
+            
+            // Añadimos el mensaje al final
+            historial.innerHTML = historial.innerHTML + nuevoMensaje;
+            
+            // Hacemos que el scroll baje automáticamente
+            historial.scrollTop = historial.scrollHeight;
+        }
+
+        // 1. Evento de carga de página
+        agregarMensaje("La página se ha recargado", "blue", "🔵");
+
+        // 2. Eventos de ventana (Resize, Focus, Blur)
+        window.onresize = function() {
+            agregarMensaje("La ventana ha cambiado de tamaño", "blue", "🔵");
+        };
+        window.onfocus = function() {
+            agregarMensaje("Se ha vuelto a la ventana", "green", "🟢");
+        };
+        window.onblur = function() {
+            agregarMensaje("Se ha abandonado la ventana", "red", "🔴");
+        };
+
+        // 3. Eventos del ratón en la zona del DIV
+        zona.onmouseenter = function() {
+            agregarMensaje("El cursor entró en el div", "blue", "🔵");
+        };
+        zona.onmouseleave = function() {
+            agregarMensaje("El cursor salió del div", "blue", "🔵");
+        };
+
+        // 4. Eventos de Click (Izquierdo y Derecho) en todo el documento
+        document.onclick = function(evento) {
+            // Ignorar si clicamos el botón de limpiar para no ensuciar el registro
+            if (evento.target.id === "btnLimpiar") {
+                return;
+            }
+
+            // Comprobar si el clic fue dentro de la zona usando .contains()
+            if (zona.contains(evento.target)) {
+                agregarMensaje("Click dentro del div", "green", "🟢");
+            } else {
+                agregarMensaje("Click fuera del div (botón izquierdo)", "red", "🔴");
+            }
+        };
+
+        // oncontextmenu es el click derecho
+        document.oncontextmenu = function(evento) {
+            evento.preventDefault(); // Evita que salga el menú del navegador
+            
+            if (zona.contains(evento.target)) {
+                agregarMensaje("Click derecho dentro del div", "green", "🟢");
+            } else {
+                agregarMensaje("Click derecho fuera del div", "red", "🔴");
+            }
+        };
+
+        // 5. Eventos de arrastrar y soltar (Drag & Drop)
+        circulo.ondragstart = function() {
+            agregarMensaje("El círculo está siendo arrastrado", "blue", "🔵");
+            soltadoDentro = false; // Reseteamos la variable al empezar a arrastrar
+        };
+
+        // Necesario para permitir que se suelte algo en la zona
+        zona.ondragover = function(evento) {
+            evento.preventDefault(); 
+        };
+
+        // Cuando se suelta EL CÍRCULO DENTRO DE LA ZONA
+        zona.ondrop = function(evento) {
+            evento.preventDefault();
+            soltadoDentro = true; // Marcamos que cayó dentro
+            agregarMensaje("El círculo fue soltado dentro del div de interacción", "green", "🟢");
+        };
+
+        // Cuando el círculo termina de arrastrarse (se suelta el ratón)
+        circulo.ondragend = function() {
+            // Si no se marcó como "dentro", es que cayó fuera
+            if (soltadoDentro === false) {
+                agregarMensaje("El círculo fue soltado fuera del div de interacción", "red", "🔴");
+            }
+        };
+
+        // 6. Botón de limpiar
+        btnLimpiar.onclick = function() {
+            historial.innerHTML = "";
+        };
+    };
+</script>
+</body>
+</html>

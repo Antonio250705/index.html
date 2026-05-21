@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Contar DIVs</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: #55935e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.caja-ejercicio {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.header-interna {
+    background-color: #0084d1;
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.panel-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 25px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.caja-resultados {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    width: 200px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.caja-resultados h3 {
+    color: #006eb0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.caja-resultados p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.caja-resultados span {
+    font-weight: bold;
+    color: #0084d1;
+}
+
+.zona-elementos {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.bloque-test {
+    width: 70px;
+    height: 35px;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #333;
+    background-color: #fcfcfc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#boton-contar {
+    background-color: #0084d1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#boton-contar:hover {
+    background-color: #006bb0;
+}
+.boton-volver {
+    margin-bottom: 50px;
+    margin-left: 400px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+    </style>
+
+</head>
+<body>
+    
+   <header>
+        <h1><b>Contar DIVs en la Página</b></h1>
+    </header>
+
+    <main>
+        <div class="caja-ejercicio">
+            <div class="header-interna">Contar DIVs en la Página</div>
+            
+            <div class="panel-contenido">
+                <div class="caja-resultados">
+                    <h3>Resultado:</h3>
+                    <p>Total de &lt;div&gt;: <span id="total-divs">0</span></p>
+                    <p>Con contenido: <span id="con-contenido">0</span></p>
+                    <p>Vacíos: <span id="vacios">0</span></p>
+                </div>
+
+                <div class="zona-elementos">
+                    <div class="bloque-test">Hola</div>
+                    <div class="bloque-test"></div>
+                    <div class="bloque-test"></div>
+                    <div class="bloque-test">Mundo</div>
+                </div>
+            </div>
+
+            <button id="boton-contar" onclick="contarElementos()">Contar Divs</button>
+        </div>
+    </main>
+
+     <a href="../../../trabajos/manipular_DOM/src/dom.html" class="boton-volver">Volver a Ejercicios DOM </a>
+
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+
+    <script src="divs.js"></script>
+
+</body>
+</html>
+<script>
+    function contarElementos() {
+        const divs = document.querySelectorAll('.bloque-test');
+        
+        let total = divs.length;
+        let conContenido = 0;
+        let vacios = 0;
+
+        divs.forEach(div => {
+            if (div.textContent.trim() === "") {
+                vacios++;
+            } else {
+                conContenido++;
+            }
+        });
+
+        document.getElementById('total-divs').textContent = total;
+        document.getElementById('con-contenido').textContent = conContenido;
+        document.getElementById('vacios').textContent = vacios;
+}
+</script>

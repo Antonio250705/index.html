@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier Garcia Corro">
+    <title>Examen practico</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(187, 183, 178);
+        }
+        .diseño{
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom, #cfcfcf, #a6a6a6); 
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+        }
+        button{
+            height: 50px;
+            width: 80px;
+            font-size: 18px;
+            background: linear-gradient(to bottom, #f0f0f0, #c0c0c0);
+            border: 4px solid #ff0000;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            transition: background 0.1s, transform 0.1s;
+        }
+        .caja{
+            background-color: #f0f0f0;
+            border: 4px solid #000000;
+            border-radius: 5px;
+        }
+        .texto{
+            color: #000000;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1{
+            margin-bottom: 25px;
+            text-align: center; 
+            color: #000000;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+        .boton-volver {
+            margin-bottom: 50px;
+            margin-left: 400px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>EJERCICIO PRÁCTICO 1</h1>
+    <div class="diseño">
+        <label class="caja">Primer Numero<input type="number" id = "NumeroA"></label>
+        <label class="caja">Segundo Numero<input type="number" id = "NumeroB"></label>
+        <label class="caja">Tercer numero<input type="number" id = "NumeroC"></label>
+        <button onclick ="calcular()">calcular</button> 
+    </div>
+    <br>
+    <hr>
+    <div class="texto">Numero MAYOR es: <span id="numMayor"></span></div>
+    <hr>
+    <div class="texto">Numero MENOR es: <span id="numMenor"></span></div>
+    <hr>
+    <div class="texto">Numero ordenado de MAYOR a MENOR: <span id="numOrde"></span></div>
+    <hr>
+    <script>
+        function calcular(){
+        const NumeroA = Number(document.getElementById("NumeroA").value);
+        const NumeroB = Number(document.getElementById("NumeroB").value);
+        const NumeroC = Number(document.getElementById("NumeroC").value);
+
+    let mayor;
+    if (NumeroA > NumeroB && NumeroC < NumeroA){
+       numMayor=NumeroA;
+    }else if (NumeroB > NumeroC && NumeroA < NumeroB){
+        numMayor=NumeroB;
+    }else if (NumeroC > NumeroA && NumeroB < NumeroC){
+        numMayor=NumeroC;
+    }else {
+        numMayor="[+]LOS NUMEROS INTRODUCIDOS SON IGUALES"
+    }
+
+    let menor;
+    if (NumeroA < NumeroB && NumeroC >NumeroA ){
+       numMenor=NumeroA;
+    }else if (NumeroB < NumeroC && NumeroA >NumeroB ){
+        numMenor=NumeroB;
+    }else if (NumeroC < NumeroA && NumeroB > NumeroC){
+        numMenor=NumeroC;
+    }else {
+        numMenor="[+]LOS NUMEROS INTRODUCIDOS SON IGUALES";
+    }
+
+    let ordenar;
+    if(NumeroA > NumeroB && NumeroC >NumeroC){
+        numOrde=[NumeroA, NumeroB, NumeroC]
+    }else if(NumeroB > NumeroA && NumeroC>NumeroB){
+       numOrde=[NumeroB, NumeroA, NumeroC]
+    }else if(NumeroC > NumeroA && NumeroB > NumeroA){
+        numOrde=[NumeroC, NumeroA, NumeroB]
+    }else{
+        numOrde="ERROR"
+    }
+    document.getElementById("numMayor").textContent=numMayor;
+    document.getElementById("numMenor").textContent=numMenor;
+    document.getElementById("numOrde").textContent=numOrde;
+    }
+    </script> 
+        <a href="./examenes.html" class="boton-volver">Volver a exámenes </a>
+
+</body>
+</html>
+        

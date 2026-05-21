@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Antonio Javier García Corro">
+    <title>Tercer trimestre</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --color-primary: #5eb8f0; /* El azul de la imagen */
+    --color-bg: #f4f7f6;
+    --color-text: #333;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--color-text);
+}
+
+header, footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+header h1 {
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: auto; 
+    font-size: 0.9rem;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; /* Aumentado un poco el padding superior/inferior */
+}
+
+/* NUEVO: Estilos para el contenedor para que las tarjetas se coloquen en cuadrícula */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* Espacio entre las tarjetas */
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+    cursor: pointer;
+    min-width: 250px; /* Asegura que todas tengan un tamaño base similar */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* NUEVO: Mejora visual para los enlaces dentro de la tarjeta */
+.card a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary); /* Color azul a juego con el tema */
+    display: block; /* Hace que toda el área de la tarjeta sea más fácil de clickear */
+}
+
+/* Efecto hover extra para el texto */
+.card a:hover {
+    color: #459ecf;
+}
+
+.card p {
+    font-weight: 600;
+    color: #555;
+}
+
+ .boton-volver {
+    margin-bottom: 50px;
+    margin-left: 400px;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Ejercicios JavaScript</h1>
+    </header>
+
+    <main>
+        <div class="card-container">
+            
+            <div class="card">
+                <a href="./trabajos/calculadora/miniCalculadora.html">Ejercicio 1: Mini Calculadora</a>
+                 <a href="./trabajos/calculadora/calc.html">Ejercicio 2:  Calculadora</a>
+            </div>
+
+            <div class="card">
+                <a href="./trabajos/presupuestos_cajas/src/cajas.html">Ejercicio 3 : Presupuestos</a>
+            </div>
+
+            <div class="card">
+                <a href="./trabajos/eventos/src/indexEventos.html">Ejercicio 4: Index de Eventos</a>
+            </div>
+
+            <div class="card">
+                <a href="./trabajos/multiplicar/src/tablas_multiplicar.html">Ejercicio 5: Tablas de Multiplicar</a>
+            </div>
+
+            <div class="card">
+                <a href="trabajos/manipular_DOM/src/dom.html">Ejercicio 6: Manipular DOM</a>
+            </div>
+
+            <div class="card">
+                <a href="./trabajos/cadena_texto/src/cadenas.html">Ejercicio 7: Cadena de texto</a>
+            </div>
+
+            <div class="card">
+                <a href="./examen_practico/src/examenes.html">Ejemplo de examen</a>
+            </div>
+
+            <div class="card">
+                <a href="./gemini/index.repaso.html">Ejercicos de repaso</a>
+            </div>
+            
+
+        </div>
+    </main>
+    <a href="../index.html" class="boton-volver">Volver a Index </a>
+
+    <footer>
+        <p>Antonio Javier García Corro</p>
+    </footer>
+</body>
+</html>

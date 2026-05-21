@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos imitando la tarjeta de la imagen */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f2f5; /* Un fondo gris/azulado suave */
+            margin: 0;
+            padding: 20px;
+        }
+        .contenedor-principal {
+            width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden; /* Para que la cabecera no se salga de las curvas */
+        }
+        .cabecera {
+            background-color: #0088cc;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+        }
+        .contenido {
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .tarjeta-blanca {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button:hover {
+            background-color: #006699;
+        }
+        #resultados {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+        }
+        .etiqueta {
+            color: #005580;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <div class="cabecera">
+            Ejercicios JavaScript
+        </div>
+        
+        <div class="contenido">
+            <div class="tarjeta-blanca">
+                <input type="text" id="textoEntrada" value="si se puede imaginar se puede programar">
+                <br>
+                <button onclick="procesarTexto()">Procesar</button>
+
+                <div id="resultados">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function procesarTexto() {
+            var texto = document.getElementById("textoEntrada").value;
+            var cajaResultados = document.getElementById("resultados");
+
+            // Si el texto está vacío, no hacemos nada
+            if (texto === "") {
+                cajaResultados.innerHTML = "<p style='color:red;'>Por favor, escribe algo.</p>";
+                return;
+            }
+
+            // 1. Texto original
+            var original = texto;
+
+            // 2. Longitud
+            var longitud = texto.length;
+
+            // 3. Número de palabras (separamos por espacios y contamos)
+            // Usamos trim() por si el usuario puso espacios al principio o final por error
+            var arrayPalabras = texto.trim().split(" ");
+            var numPalabras = arrayPalabras.length;
+
+            // 4. Mayúsculas y Minúsculas
+            var mayusculas = texto.toUpperCase();
+            var minusculas = texto.toLowerCase();
+
+            // 5. Capitalizado (Primera letra de cada palabra en mayúscula)
+            var textoCapitalizado = "";
+            for (var i = 0; i < arrayPalabras.length; i++) {
+                var palabra = arrayPalabras[i];
+                var primeraLetra = palabra.charAt(0).toUpperCase();
+                var restoPalabra = palabra.slice(1).toLowerCase();
+                
+                textoCapitalizado = textoCapitalizado + primeraLetra + restoPalabra + " ";
+            }
+            // Quitamos el último espacio extra que se queda en el bucle
+            textoCapitalizado = textoCapitalizado.trim();
+
+            // 6. Primer y último carácter
+            var primerCaracter = texto.charAt(0);
+            var ultimoCaracter = texto.charAt(texto.length - 1);
+
+            // 7. Concatenado con " JS"
+            var concatenado = texto.concat(" JS");
+
+            // 8. Contiene "a"
+            var contieneA = "No";
+            if (texto.includes("a")) {
+                contieneA = "Sí";
+            }
+
+            // 9. Reemplazar "a" por "@"
+            var reemplazado = texto.replaceAll("a", "@");
+
+            // 10. Subcadena (0-5)
+            var subcadena = texto.slice(0, 5);
+
+
+            // --- CONSTRUIR LA SALIDA HTML ---
+            // Usamos la clásica concatenación con "+" y clases CSS para darle color
+            var htmlFinal = "";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Texto original:</span> " + original + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Longitud:</span> " + longitud + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Número de palabras:</span> " + numPalabras + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Mayúsculas:</span> " + mayusculas + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Minúsculas:</span> " + minusculas + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Capitalizado:</span> " + textoCapitalizado + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Primer carácter:</span> " + primerCaracter + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Último carácter:</span> " + ultimoCaracter + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Concatenado con \" JS\":</span> " + concatenado + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Contiene \"a\":</span> " + contieneA + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Reemplazar \"a\" por \"@\":</span> " + reemplazado + "<br>";
+            htmlFinal = htmlFinal + "<span class='etiqueta'>Subcadena (0-5):</span> " + subcadena;
+
+            // Inyectamos todo en el DIV
+            cajaResultados.innerHTML = htmlFinal;
+        }
+    </script>
+</body>
+</html>
